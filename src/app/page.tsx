@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   return (
@@ -14,13 +17,146 @@ export default function Home() {
 }
 
 function HeroSection() {
+  const router = useRouter();
+  
   return (
-    <section style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>Welcome to DSEmath.ai</h1>
-      <p>Your AI-powered platform for advanced mathematics solutions.</p>
+    <section className="min-h-screen pt-28 bg-gradient-background relative overflow-hidden select-none">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 50% 50%, hsl(220 75% 55% / 0.1) 1px, transparent 1px)`,
+            backgroundSize: "32px 32px",
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in">
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-accent/80 to-accent/60 backdrop-blur-sm px-6 py-3 rounded-full text-accent-foreground text-sm font-medium shadow-lg border border-accent/20 mx-auto">
+            <span className="w-4 h-4 animate-pulse text-blue-600">✨</span>
+            <span className="text-blue-600 font-medium">
+              AI-Powered Math Learning Platform
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="text-6xl lg:text-9xl font-bold leading-tight tracking-tight">
+            <div className="flex flex-col items-center gap-4 mb-6">
+              {/* Pay 10% */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 sm:justify-start sm:pl-8">
+                <span className="text-foreground/90 hover:text-foreground transition-colors duration-300 text-4xl lg:text-6xl font-normal tracking-wide">
+                  Pay
+                </span>
+                <span className="relative">
+                  <span className="bg-gradient-to-r from-emerald-400 via-green-500 to-teal-600 bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_auto] font-bold text-7xl lg:text-[12rem] drop-shadow-2xl">
+                    10%
+                  </span>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/30 via-green-500/30 to-teal-600/30 rounded-2xl blur-2xl animate-pulse" />
+                </span>
+              </div>
+
+              {/* Achieve 200% */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 sm:justify-end sm:pr-8">
+                <span className="text-foreground/90 hover:text-foreground transition-colors duration-300 text-4xl lg:text-6xl font-normal tracking-wide">
+                  Achieve
+                </span>
+                <span className="relative">
+                  <span
+                    className="bg-gradient-to-r from-violet-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_auto] font-bold text-7xl lg:text-[12rem] drop-shadow-2xl"
+                    style={{ animationDelay: "1s" }}
+                  >
+                    200%
+                  </span>
+                  <div
+                    className="absolute -inset-2 bg-gradient-to-r from-violet-400/30 via-purple-500/30 to-indigo-600/30 rounded-2xl blur-2xl animate-pulse"
+                    style={{ animationDelay: "1s" }}
+                  />
+                </span>
+              </div>
+            </div>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            Skip expensive tutoring centers. Master{" "}
+            <span className="font-medium text-blue-600">DSE Math</span> with AI
+            that adapts to YOU.
+          </p>
+
+          {/* Features */}
+          <div className="max-w-2xl mx-auto space-y-4">
+            {[
+              "Unlimited practice questions",
+              "Instant step-by-step solutions",
+              "Track weak areas automatically",
+            ].map((text, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center gap-3 text-lg text-foreground"
+              >
+                <span className="text-green-500 font-bold text-xl">✓</span>
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button
+              className="group relative border-2 border-blue-600/80 hover:border-blue-700 text-white bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 hover:bg-blue-700 font-bold px-14 py-7 rounded-full transition-all duration-500 transform hover:scale-110 shadow-xl hover:shadow-blue-700/40 backdrop-blur-md"
+              onClick={() => router.push("/ai-generator")}
+            >
+              <span className="relative z-10 flex items-center gap-3 text-xl">
+                Generate Questions
+                <span className="w-7 h-7 group-hover:translate-x-2 transition-transform duration-300">→</span>
+              </span>
+            </button>
+
+            <button
+              className="group relative border-2 border-green-600/40 hover:border-green-600 text-green-600 hover:text-white bg-white/5 hover:bg-green-600 font-medium px-12 py-6 rounded-full transition-all duration-500 transform hover:scale-110 shadow-lg hover:shadow-green-600/30 backdrop-blur-sm"
+              onClick={() => router.push("/ai-chat")}
+            >
+              <span className="flex items-center gap-3 text-lg">
+                AI Chat Assistant
+                <span className="w-6 h-6 group-hover:scale-110 transition-transform duration-300">💬</span>
+              </span>
+            </button>
+
+            <button
+              className="group relative border-2 border-purple-600/40 hover:border-purple-600 text-purple-600 hover:text-white bg-white/5 hover:bg-purple-600 font-medium px-12 py-6 rounded-full transition-all duration-500 transform hover:scale-110 shadow-lg hover:shadow-purple-600/30 backdrop-blur-sm"
+              onClick={() => router.push("/question-bank")}
+            >
+              <span className="flex items-center gap-3 text-lg">
+                Browse Question Bank
+                <span className="w-6 h-6 group-hover:scale-110 transition-transform duration-300">🗄️</span>
+              </span>
+            </button>
+          </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap items-center justify-center gap-8 text-base text-muted-foreground">
+            {[
+              { label: "10,000+ Questions", color: "from-secondary to-green-400" },
+              { label: "AI-Powered", color: "from-primary to-blue-400", delay: "0.5s" },
+              { label: "DSE Focused", color: "from-violet-400 to-purple-500", delay: "1s" },
+            ].map(({ label, color, delay }, i) => (
+              <div key={i} className="flex items-center space-x-3">
+                <div
+                  className={`w-3 h-3 bg-gradient-to-r ${color} rounded-full animate-pulse`}
+                  style={{ animationDelay: delay }}
+                />
+                <span>{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
-}
+};
 
 function ProductCharacteristics() {
   return (
