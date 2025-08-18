@@ -1,30 +1,8 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
-import { useCallback } from 'react';
+import { LogoutButton } from "./component";
 
 function TopBar (){
-    const router = useRouter();
-
-    const handleLogout = useCallback(async () => {
-        try {
-        const response = await fetch('/api/auth/logout', {
-            method: 'POST',
-        });
-
-        if (response.ok) {
-            console.log('Logout successful, redirecting to /login');
-            router.push('/login');
-        } else {
-            console.error('Logout failed:', await response.text());
-        }
-        } catch (error) {
-        console.error('Logout error:', error);
-        }
-    }, [router]);
-
     return (
         <header style={{
             width: "100%",
@@ -62,7 +40,7 @@ function TopBar (){
                     </div>
                     <div>
                         <Link href="/setting">Setting</Link>
-                        <div onClick={handleLogout}>Logout</div>
+                        <LogoutButton />
                     </div>
                 </div>
             </nav>
