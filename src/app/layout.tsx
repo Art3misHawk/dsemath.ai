@@ -31,6 +31,7 @@ export default function RootLayout({
         <TopBar />
         {children}
       </body>
+      <script src="https://accounts.google.com/gsi/client" async></script>
     </html>
   );
 }

@@ -1,10 +1,19 @@
 import React from 'react';
+import { redirect } from 'next/navigation';
+import { createClient } from '@/lib/supabase/server';
 
-const DashboardPage: React.FC = () => {
+const DashboardPage: React.FC = async () => {
+    const supabase = await createClient();
+    const { data, error } = await supabase.auth.getUser();
+
+    if (error || !data?.user) {
+        redirect('/login');
+    }
+
     return (
         <main>
             <h1>Dashboard</h1>
-            <p>Welcome to your dashboard!</p>
+            <p>Welcome to {data.user.email}'s' dashboard!</p>
             {/* Add your dashboard components here */}
         </main>
     );
