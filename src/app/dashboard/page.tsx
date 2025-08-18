@@ -8,8 +8,6 @@ export default async function DashboardPage() {
     if (error || !data?.user) {
         redirect('/login');
     }
-    
-    console.log('User Info:', data.user);
 
     return (
         <main>
