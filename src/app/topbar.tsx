@@ -15,7 +15,7 @@ const TopBar: React.FC = () => (
     }}>
         <h1 style={{ margin: 0, fontSize: "1.5rem", letterSpacing: "1px" }}>
             <Link href="/" style={{ color: "#fff", textDecoration: "none" }}>
-                DSEmath.ai
+                dsemath.ai
             </Link>
         </h1>
         <nav style={{ marginLeft: "auto", display: "flex", alignItems: "center" }}>
