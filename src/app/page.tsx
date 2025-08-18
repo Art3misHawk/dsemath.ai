@@ -116,16 +116,6 @@ function HeroSection() {
             </button>
 
             <button
-              className="group relative border-2 border-green-600/40 hover:border-green-600 text-green-600 hover:text-white bg-white/5 hover:bg-green-600 font-medium px-12 py-6 rounded-full transition-all duration-500 transform hover:scale-110 shadow-lg hover:shadow-green-600/30 backdrop-blur-sm"
-              onClick={() => router.push("/ai-chat")}
-            >
-              <span className="flex items-center gap-3 text-lg">
-                AI Chat Assistant
-                <span className="w-6 h-6 group-hover:scale-110 transition-transform duration-300">💬</span>
-              </span>
-            </button>
-
-            <button
               className="group relative border-2 border-purple-600/40 hover:border-purple-600 text-purple-600 hover:text-white bg-white/5 hover:bg-purple-600 font-medium px-12 py-6 rounded-full transition-all duration-500 transform hover:scale-110 shadow-lg hover:shadow-purple-600/30 backdrop-blur-sm"
               onClick={() => router.push("/question-bank")}
             >
