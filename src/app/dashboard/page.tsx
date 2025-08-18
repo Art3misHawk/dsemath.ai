@@ -17,5 +17,3 @@ export default async function DashboardPage() {
         </main>
     );
 };
-
-export default DashboardPage;
