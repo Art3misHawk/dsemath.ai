@@ -13,7 +13,7 @@ const DashboardPage: React.FC = async () => {
     return (
         <main>
             <h1>Dashboard</h1>
-            <p>Welcome to {data.user.email}'s' dashboard!</p>
+            <p>Welcome to {data.user.email} dashboard!</p>
             {/* Add your dashboard components here */}
         </main>
     );
