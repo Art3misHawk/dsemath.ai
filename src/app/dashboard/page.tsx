@@ -9,11 +9,13 @@ export default async function DashboardPage() {
     redirect('/login');
   }
 
-  return (
-    <main>
-      <h1>Dashboard</h1>
-      <p>Welcome to {data.user.email}&apos;s dashboard!</p>
-      {/* Add your dashboard components here */}
-    </main>
-  );
-}
+    return (
+        <main>
+            <h1>Dashboard</h1>
+            <p>Welcome to {data.user.email} dashboard!</p>
+            {/* Add your dashboard components here */}
+        </main>
+    );
+};
+
+export default DashboardPage;

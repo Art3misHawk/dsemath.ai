@@ -4,7 +4,7 @@ const EasterEggPage: React.FC = () => {
     return (
         <main style={{ padding: '2rem', textAlign: 'center' }}>
             <h1>🥚 Easter Egg</h1>
-            <p>You've fuck the kpc!</p>
+            <p>You have fucked the kpc!</p>
         </main>
     );
 };
