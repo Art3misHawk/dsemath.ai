@@ -1,6 +1,6 @@
-"use client";
-
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles, Database, MessageCircle } from "lucide-react";
 
 export default function Home() {
   return (
