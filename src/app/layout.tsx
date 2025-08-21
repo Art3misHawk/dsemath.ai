@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "dsemath.ai",
-  description: "an AI-powered platform for DSE mathematics",
+  description: "an AI-powered platform for DSE Mathematics",
 };
 
 export default function RootLayout({
