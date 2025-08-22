@@ -41,14 +41,6 @@
   --color-popover: oklch(100% 0 0); /* White popover */
   --color-popover-foreground: oklch(15% 0.02 220);
 
-  /* Custom clean white theme colors */
-  --color-heading: oklch(10% 0.02 220); /* Very dark heading */
-  --color-subtext: oklch(40% 0.02 220); /* Medium gray subtext */
-  --color-feature-text: oklch(45% 0.15 140); /* Green for features */
-  --color-small-text: oklch(50% 0.02 220); /* Light gray small text */
-  --color-accent-gradient-start: oklch(56% 0.18 220); /* Blue start */
-  --color-accent-gradient-end: oklch(58% 0.17 262); /* Purple end */
-
   /* Chart colors */
   --color-chart-1: oklch(55% 0.15 220);
   --color-chart-2: oklch(65% 0.14 200);
@@ -62,29 +54,6 @@
   --radius-md: 0.625rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
-
-  /* Shadows for clean white design */
-  --shadow-sm: 0 1px 2px 0 oklch(15% 0.02 220 / 0.05);
-  --shadow: 0 1px 3px 0 oklch(15% 0.02 220 / 0.1), 0 1px 2px -1px oklch(15% 0.02 220 / 0.1);
-  --shadow-md: 0 4px 6px -1px oklch(15% 0.02 220 / 0.1), 0 2px 4px -2px oklch(15% 0.02 220 / 0.1);
-  --shadow-lg: 0 10px 15px -3px oklch(15% 0.02 220 / 0.1), 0 4px 6px -4px oklch(15% 0.02 220 / 0.1);
-  --shadow-xl: 0 20px 25px -5px oklch(15% 0.02 220 / 0.1), 0 8px 10px -6px oklch(15% 0.02 220 / 0.1);
-  
-  /* Custom shadows */
-  --shadow-elegant: 0 10px 30px -10px oklch(56% 0.18 220 / 0.15);
-  --shadow-glow: 0 0 40px oklch(70% 0.15 220 / 0.2);
-  --shadow-card: 0 4px 20px -4px oklch(15% 0.02 220 / 0.08);
-
-  /* Animation durations */
-  --animate-duration-150: 150ms;
-  --animate-duration-300: 300ms;
-  --animate-duration-500: 500ms;
-  --animate-duration-700: 700ms;
-  
-  /* Transition timing functions */
-  --animate-ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --animate-ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --animate-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Dark mode theme (if needed) */
@@ -94,175 +63,39 @@
     --color-foreground: oklch(98% 0.01 210);
     --color-card: oklch(5% 0.02 222);
     --color-card-foreground: oklch(98% 0.01 210);
-    --color-heading: oklch(98% 0.01 210);
-    --color-subtext: oklch(70% 0.02 220);
-    --color-feature-text: oklch(65% 0.15 140);
-    --color-small-text: oklch(60% 0.02 220);
   }
 }
 
-/* Base styles using v4 syntax */
+/* Base styles */
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: theme(fontFamily.sans);
-  background: theme(colors.background);
-  color: theme(colors.foreground);
+  background: white;
+  color: rgb(38 38 38);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  opacity: 0;
+  animation: fadeIn 300ms ease-out forwards;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* 80px */
+  scroll-padding-top: 5rem;
 }
 
-/* Prevent flash of unstyled content */
-body {
-  opacity: 0;
-  animation: fadeInBody var(--animate-duration-300) var(--animate-ease-out) forwards;
-}
-
-/* Custom utility classes for clean white theme */
-@utility hero-clean-white {
-  background: theme(colors.background);
-  color: theme(colors.foreground);
-}
-
-@utility heading-primary {
-  color: theme(colors.heading);
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-@utility text-subtext {
-  color: theme(colors.subtext);
-}
-
-@utility text-feature {
-  color: theme(colors.feature-text);
-}
-
-@utility text-small {
-  color: theme(colors.small-text);
-}
-
-@utility accent-gradient {
-  background: linear-gradient(135deg, theme(colors.accent-gradient-start), theme(colors.accent-gradient-end));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@utility btn-primary-gradient {
-  background: linear-gradient(135deg, theme(colors.primary), theme(colors.accent-gradient-end));
-  color: theme(colors.primary-foreground);
-  transition: all var(--animate-duration-300) var(--animate-ease-in-out);
-}
-
-@utility btn-primary-gradient:hover {
-  box-shadow: theme(shadows.elegant);
-  transform: translateY(-1px);
-}
-
-@utility card-clean {
-  background: theme(colors.card);
-  border: 1px solid theme(colors.border);
-  border-radius: theme(radius.lg);
-  box-shadow: theme(shadows.card);
-}
-
-@utility badge-clean {
-  background: oklch(95% 0.02 220);
-  border: 1px solid oklch(85% 0.02 220);
-  color: theme(colors.primary);
-}
-
-/* Custom animations using v4 syntax */
-@keyframes fadeInBody {
+/* Simple animations */
+@keyframes fadeIn {
   to { opacity: 1; }
 }
 
-@keyframes fade-in {
-  from { 
-    opacity: 0; 
-    transform: translateY(1.25rem); /* 20px */
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-}
-
-@keyframes slide-up {
-  from { 
-    opacity: 0; 
-    transform: translateY(1.875rem); /* 30px */
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-}
-
 @keyframes float {
-  0%, 100% { 
-    transform: translateY(0) rotate(0deg); 
-  }
-  33% { 
-    transform: translateY(-0.625rem) rotate(1deg); /* -10px */
-  }
-  66% { 
-    transform: translateY(-0.3125rem) rotate(-1deg); /* -5px */
-  }
-}
-
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* Animation utility classes */
-@utility animate-fade-in {
-  animation: fade-in var(--animate-duration-500) var(--animate-ease-out) forwards;
-}
-
-@utility animate-slide-up {
-  animation: slide-up var(--animate-duration-700) var(--animate-ease-out) forwards;
-}
-
-@utility animate-float {
-  animation: float 3s var(--animate-ease-in-out) infinite;
-}
-
-@utility animate-gradient-shift {
-  animation: gradient-shift 3s var(--animate-ease-in-out) infinite;
-}
-
-/* Custom question fonts using v4 syntax */
-@utility question-text {
-  font-family: theme(fontFamily.serif);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-@utility question-text-modern {
-  font-family: theme(fontFamily.sans);
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-@utility question-text-mono {
-  font-family: theme(fontFamily.mono);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  font-weight: 400;
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
 }
 
 /* KaTeX styling */

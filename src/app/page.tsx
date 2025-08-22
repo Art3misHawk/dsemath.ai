@@ -37,7 +37,7 @@ export default function HomePage() {
   // Hero Section Component
   const HeroSection = () => {
     return (
-      <section className="hero-clean-white min-h-screen flex items-center justify-center px-4 py-20">
+      <section className="bg-white min-h-screen flex items-center justify-center px-4 py-20">
         <div className="max-w-6xl mx-auto text-center space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200">
@@ -45,14 +45,14 @@ export default function HomePage() {
             <span className="text-sm font-medium text-blue-700">AI-Powered Math Learning Platform</span>
           </div>
 
-          {/* Pay 10% Achieve 200% - THE MISSING ELEMENT */}
-          <div className="space-y-4 mb-8">
+          {/* Pay 10% Achieve 200% - With gradient boxes */}
+          <div className="space-y-6 mb-8">
             {/* Pay 10% with green gradient background */}
             <div className="flex items-center justify-center space-x-4">
               <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">Pay</span>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl opacity-20 blur-xl scale-110"></div>
-                <div className="relative bg-gradient-to-r from-green-400 to-green-600 text-white px-8 py-4 rounded-2xl">
+                <div className="relative bg-gradient-to-r from-green-400 to-green-600 text-white px-8 py-4 rounded-2xl shadow-lg">
                   <span className="text-5xl md:text-6xl lg:text-8xl font-black">10%</span>
                 </div>
               </div>
@@ -63,14 +63,14 @@ export default function HomePage() {
               <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">Achieve</span>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl opacity-20 blur-xl scale-110"></div>
-                <div className="relative bg-gradient-to-r from-purple-400 to-purple-600 text-white px-8 py-4 rounded-2xl">
+                <div className="relative bg-gradient-to-r from-purple-400 to-purple-600 text-white px-8 py-4 rounded-2xl shadow-lg">
                   <span className="text-5xl md:text-6xl lg:text-8xl font-black">200%</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Main Heading - Smaller now since Pay/Achieve is the hero */}
+          {/* Main Heading */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-800">
               Master{" "}
@@ -80,14 +80,14 @@ export default function HomePage() {
             </h1>
           </div>
 
-          {/* Subheading - Medium gray */}
+          {/* Subheading */}
           <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed text-gray-600">
             Skip expensive tutoring centers. Master{" "}
             <span className="font-semibold text-blue-600">DSE Math</span>{" "}
             with AI that adapts to YOU.
           </p>
 
-          {/* Features List - Green checkmarks */}
+          {/* Features List */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
             <div className="flex items-center gap-2">
               <Check className="w-5 h-5 text-green-500" />
@@ -108,7 +108,7 @@ export default function HomePage() {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-              onClick={() => router.push('/questions')}
+              onClick={() => router.push('/ai-generator')}
             >
               Generate Questions
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -118,14 +118,14 @@ export default function HomePage() {
               variant="outline" 
               size="lg"
               className="border-2 border-gray-300 hover:border-blue-500 text-gray-700 hover:text-blue-600 px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300"
-              onClick={() => router.push('/chat')}
+              onClick={() => router.push('/ai-generator')}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               AI Chat Assistant
             </Button>
           </div>
 
-          {/* Trust indicators - Light gray */}
+          {/* Trust indicators */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 text-green-500" />
