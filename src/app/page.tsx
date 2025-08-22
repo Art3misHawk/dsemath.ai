@@ -37,105 +37,107 @@ export default function HomePage() {
   // Hero Section Component
   const HeroSection = () => {
     return (
-      <section className="min-h-screen pt-28 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 relative overflow-hidden select-none">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 50% 50%, hsl(220 75% 55% / 0.1) 1px, transparent 1px)`,
-            backgroundSize: '32px 32px'
-          }}></div>
-        </div>
+      <section className="hero-clean-white min-h-screen flex items-center justify-center px-4 py-20">
+        <div className="max-w-6xl mx-auto text-center space-y-8">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200">
+            <Sparkles className="w-4 h-4 text-blue-500" />
+            <span className="text-sm font-medium text-blue-700">AI-Powered Math Learning Platform</span>
+          </div>
 
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-6xl mx-auto text-center">
-            {/* Content */}
-            <div className="space-y-8 animate-fade-in">
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-accent/80 to-accent/60 backdrop-blur-sm px-6 py-3 rounded-full text-accent-foreground text-sm font-medium shadow-lg border border-accent/20 mx-auto">
-                <Sparkles className="w-4 h-4 animate-pulse text-blue-600" />
-                <span className="text-blue-600 font-medium">
-                  AI-Powered Math Learning Platform
-                </span>
-              </div>
-              
+          {/* Pay 10% Achieve 200% - THE MISSING ELEMENT */}
+          <div className="space-y-4 mb-8">
+            {/* Pay 10% with green gradient background */}
+            <div className="flex items-center justify-center space-x-4">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">Pay</span>
               <div className="relative">
-                <h1 className="text-6xl lg:text-9xl font-bold leading-tight tracking-tight">
-                  <div className="flex flex-col items-center gap-4 mb-6">
-                    <span className="text-white drop-shadow-lg">Master DSE Math</span>
-                    <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">with AI</span>
-                  </div>
-                </h1>
-              </div>
-
-              <p className="text-xl lg:text-3xl text-blue-100 max-w-4xl mx-auto leading-relaxed drop-shadow">
-                Skip expensive tutoring centers. Master <span className="font-medium text-yellow-300">DSE Math</span> with AI that adapts to YOU.
-              </p>
-
-              {/* Feature highlights */}
-              <div className="max-w-2xl mx-auto space-y-4">
-                <div className="flex items-center justify-center gap-3 text-lg text-white">
-                  <span className="text-green-400 font-bold text-xl">✓</span>
-                  <span>Unlimited practice questions</span>
-                </div>
-                <div className="flex items-center justify-center gap-3 text-lg text-white">
-                  <span className="text-green-400 font-bold text-xl">✓</span>
-                  <span>Instant step-by-step solutions</span>
-                </div>
-                <div className="flex items-center justify-center gap-3 text-lg text-white">
-                  <span className="text-green-400 font-bold text-xl">✓</span>
-                  <span>Track weak areas automatically</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl opacity-20 blur-xl scale-110"></div>
+                <div className="relative bg-gradient-to-r from-green-400 to-green-600 text-white px-8 py-4 rounded-2xl">
+                  <span className="text-5xl md:text-6xl lg:text-8xl font-black">10%</span>
                 </div>
               </div>
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Button 
-                  variant="hero"
-                  size="xl" 
-                  className="group relative border-2 border-yellow-400 hover:border-yellow-300 text-black font-bold px-14 py-7 rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-yellow-400/50 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 hover:from-yellow-300 hover:via-orange-300 hover:to-red-300"
-                  onClick={() => router.push('/ai-generator')}
-                >
-                  <span className="relative z-10 flex items-center gap-3 text-xl">
-                    Generate Questions
-                    <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform duration-300" />
-                  </span>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="xl"
-                  className="group relative border-2 border-white/40 hover:border-white text-white hover:text-blue-600 bg-white/10 hover:bg-white font-medium px-12 py-6 rounded-full transition-all duration-500 transform hover:scale-110 shadow-lg hover:shadow-white/30 backdrop-blur-sm"
-                  onClick={() => router.push('/ai-generator')}
-                >
-                  <span className="flex items-center gap-3 text-lg">
-                    AI Chat Assistant
-                    <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                  </span>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="xl"
-                  className="group relative border-2 border-purple-600/40 hover:border-purple-600 text-purple-600 hover:text-white bg-white/5 hover:bg-purple-600 font-medium px-12 py-6 rounded-full transition-all duration-500 transform hover:scale-110 shadow-lg hover:shadow-purple-600/30 backdrop-blur-sm"
-                  onClick={() => router.push('/question-bank')}
-                >
-                  <span className="flex items-center gap-3 text-lg">
-                    Browse Question Bank
-                    <Database className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                  </span>
-                </Button>
-              </div>
-
-              <div className="flex flex-wrap items-center justify-center gap-8 text-base text-muted-foreground">
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-500" />
-                  <span>No credit card required</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-500" />
-                  <span>14-day free trial</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-500" />
-                  <span>Cancel anytime</span>
+            {/* Achieve 200% with purple gradient background */}
+            <div className="flex items-center justify-center space-x-4">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">Achieve</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl opacity-20 blur-xl scale-110"></div>
+                <div className="relative bg-gradient-to-r from-purple-400 to-purple-600 text-white px-8 py-4 rounded-2xl">
+                  <span className="text-5xl md:text-6xl lg:text-8xl font-black">200%</span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Main Heading - Smaller now since Pay/Achieve is the hero */}
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-800">
+              Master{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">DSE Math</span>
+              <br />
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">with AI</span>
+            </h1>
+          </div>
+
+          {/* Subheading - Medium gray */}
+          <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed text-gray-600">
+            Skip expensive tutoring centers. Master{" "}
+            <span className="font-semibold text-blue-600">DSE Math</span>{" "}
+            with AI that adapts to YOU.
+          </p>
+
+          {/* Features List - Green checkmarks */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-green-500" />
+              <span className="font-medium text-gray-700">Unlimited practice questions</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-green-500" />
+              <span className="font-medium text-gray-700">Instant step-by-step solutions</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-green-500" />
+              <span className="font-medium text-gray-700">Track weak areas automatically</span>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => router.push('/questions')}
+            >
+              Generate Questions
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-gray-300 hover:border-blue-500 text-gray-700 hover:text-blue-600 px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300"
+              onClick={() => router.push('/chat')}
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+              AI Chat Assistant
+            </Button>
+          </div>
+
+          {/* Trust indicators - Light gray */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-green-500" />
+              <span className="text-sm text-gray-500">No credit card required</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-green-500" />
+              <span className="text-sm text-gray-500">14-day free trial</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-green-500" />
+              <span className="text-sm text-gray-500">Cancel anytime</span>
             </div>
           </div>
         </div>
