@@ -1,24 +1,11 @@
 'use client';
 
-import { createClient } from '@/lib/supabase/client';
+
 import { login, signup } from './actions'
-
+import { handleGoogleLogin } from './utils';
 export default function LoginPage() {
-  const supabase = createClient();
 
-  const handleGoogleLogin = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
-        },
-      },
-    });
-  };
-  
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8 p-6 bg-white rounded-lg shadow-md">
