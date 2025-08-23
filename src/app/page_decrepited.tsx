@@ -97,7 +97,7 @@ export default function HomePage() {
             </div>
 
             <p className="text-xl lg:text-3xl text-slate-600 dark:text-slate-400 max-w-4xl mx-auto leading-relaxed">
-              Skip expensive tutoring centers. Master <span className="font-medium text-blue-600 dark:text-blue-400">DSE Math</span> with AI that adapts to YOU.
+              Skip expensive tutoring centers. Experience the future of math education with AI.
             </p>
 
             {/* Feature highlights */}
@@ -135,17 +135,6 @@ export default function HomePage() {
                 onClick={() => navigate('/ai-chat')}
               >
                 <span className="flex items-center gap-3 text-lg">
-                  AI Chat Assistant
-                  <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                </span>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="group relative border-2 border-purple-600/40 hover:border-purple-600 text-purple-600 hover:text-white bg-white/5 hover:bg-purple-600 font-medium px-12 py-6 rounded-full transition-all duration-500 transform hover:scale-110 shadow-lg hover:shadow-purple-600/30 backdrop-blur-sm dark:bg-slate-800/5 dark:hover:bg-purple-600"
-                onClick={() => navigate('/question-bank')}
-              >
-                <span className="flex items-center gap-3 text-lg">
                   Browse Question Bank
                   <Database className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                 </span>
@@ -155,7 +144,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center justify-center gap-8 text-base text-slate-500 dark:text-slate-400">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse" />
-                <span>10,000+ Questions</span>
+                <span>1000+ Questions</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-pulse" />
@@ -639,7 +628,7 @@ export default function HomePage() {
       product: [
         { name: "AI Generator", href: "#generator" },
         { name: "Question Bank", href: "#question-bank" },
-        { name: "Leaderboard", href: "#leaderboard" },
+        { name: "Community", href: "#community" },
         { name: "Mobile App", href: "#app" },
       ],
       support: [

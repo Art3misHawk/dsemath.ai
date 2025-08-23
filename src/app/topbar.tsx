@@ -1,52 +1,3 @@
-/* import React from "react";
-import Link from "next/link";
-
-const TopBar: React.FC = () => (
-    <header style={{
-        width: "100%",
-        height: "60px",
-        backgroundColor: "#22223b",
-        color: "#fff",
-        display: "flex",
-        alignItems: "center",
-        padding: "0 24px",
-        boxSizing: "border-box",
-        boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
-    }}>
-        <h1 style={{ margin: 0, fontSize: "1.5rem", letterSpacing: "1px" }}>
-            <Link href="/" style={{ color: "#fff", textDecoration: "none" }}>
-                dsemath.ai
-            </Link>
-        </h1>
-        <nav style={{ marginLeft: "auto", display: "flex", alignItems: "center" }}>
-            <Link href="/ai-generator" style={{ color: "#fff", textDecoration: "none", marginLeft: "24px" }}>
-                AI Generator
-            </Link>
-            <Link href="/question-bank" style={{ color: "#fff", textDecoration: "none", marginLeft: "24px" }}>
-                Question Bank
-            </Link>
-            <Link href="/leaderboard" style={{ color: "#fff", textDecoration: "none", marginLeft: "24px" }}>
-                Leaderboard
-            </Link>
-            <Link href="/dashboard" style={{ color: "#fff", textDecoration: "none", marginLeft: "24px" }}>
-                Dashboard
-            </Link>
-            Me
-            <div>
-                <div>
-                    Login
-                </div>
-                <div>
-                    <Link href="/setting">Setting</Link>
-                    Logout
-                </div>
-            </div>
-        </nav>
-    </header>
-);
-
-export default TopBar; */
-
 "use client";
 
 import { Menu, X, User, Brain, Database, Trophy, Settings } from 'lucide-react';
@@ -70,12 +21,12 @@ export default function TopBar() {
   };
 
   const navItems = [
-    { name: "AI Generator", icon: Brain, href: "/ai-generator" },
-    { name: "Question Bank", icon: Database, href: "/question-bank" },
-    { name: "Leaderboard", icon: Trophy, href: "/leaderboard" },
-    { name: "Dashboard", icon: User, href: "/dashboard" },
-    { name: "Settings", icon: Settings, href: "/setting" },
-    { name: "Login", icon: Settings, href: "/login" },
+    { name: "AI Generator", href: "/ai-generator" },
+    { name: "Question Bank", href: "/question-bank" },
+    { name: "Community", href: "/community" },
+    { name: "Dashboard", href: "/dashboard" },
+    { name: "Settings", href: "/setting" },
+    { name: "Login", href: "/login" },
   ];
 
   useEffect(() => {
@@ -140,7 +91,6 @@ export default function TopBar() {
                 onClick={(e) => handleNavClick(item.href, e)}
                 className="flex items-center space-x-1 lg:space-x-2 rounded-full text-emerald-700 bg-emerald-100 hover:text-white hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-600 transition-all duration-500 group hover:shadow-lg hover:shadow-emerald-400/25 cursor-pointer px-2 py-2 text-xs lg:px-3 lg:py-2.5 lg:text-sm xl:px-4 xl:py-3 xl:text-base"
               >
-                <item.icon className="w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 group-hover:scale-110 transition-all duration-500" />
                 <span className="hidden lg:block text-xs lg:text-sm xl:text-base font-medium">
                   {item.name}
                 </span>
@@ -174,7 +124,6 @@ export default function TopBar() {
                   }}
                   className="flex items-center space-x-3 text-emerald-700 bg-emerald-100 hover:text-white hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-600 transition-all duration-300 p-3 rounded-xl hover:shadow-lg backdrop-blur-sm cursor-pointer"
                 >
-                  <item.icon className="w-5 h-5" />
                   <span className="font-medium">{item.name}</span>
                 </Link>
               ))}
