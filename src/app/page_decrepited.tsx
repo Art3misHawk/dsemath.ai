@@ -625,7 +625,7 @@ export default function HomePage() {
       product: [
         { name: "AI Generator", href: "#generator" },
         { name: "Question Bank", href: "#question-bank" },
-        { name: "Leaderboard", href: "#leaderboard" },
+        { name: "Community", href: "#community" },
         { name: "Mobile App", href: "#app" },
       ],
       support: [
