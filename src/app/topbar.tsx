@@ -76,6 +76,7 @@ export default function TopBar() {
     { name: "Leaderboard", icon: Trophy, href: "/leaderboard" },
     { name: "Dashboard", icon: User, href: "/dashboard" },
     { name: "Settings", icon: Settings, href: "/setting" },
+    { name: "Login", icon: Settings, href: "/login" },
   ];
 
   useEffect(() => {
