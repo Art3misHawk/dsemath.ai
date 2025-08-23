@@ -91,7 +91,6 @@ export default function TopBar() {
                 onClick={(e) => handleNavClick(item.href, e)}
                 className="flex items-center space-x-1 lg:space-x-2 rounded-full text-emerald-700 bg-emerald-100 hover:text-white hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-600 transition-all duration-500 group hover:shadow-lg hover:shadow-emerald-400/25 cursor-pointer px-2 py-2 text-xs lg:px-3 lg:py-2.5 lg:text-sm xl:px-4 xl:py-3 xl:text-base"
               >
-                <item.icon className="w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 group-hover:scale-110 transition-all duration-500" />
                 <span className="hidden lg:block text-xs lg:text-sm xl:text-base font-medium">
                   {item.name}
                 </span>
@@ -125,7 +124,6 @@ export default function TopBar() {
                   }}
                   className="flex items-center space-x-3 text-emerald-700 bg-emerald-100 hover:text-white hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-600 transition-all duration-300 p-3 rounded-xl hover:shadow-lg backdrop-blur-sm cursor-pointer"
                 >
-                  <item.icon className="w-5 h-5" />
                   <span className="font-medium">{item.name}</span>
                 </Link>
               ))}
