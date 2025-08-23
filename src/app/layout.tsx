@@ -4,7 +4,6 @@ import "./globals.css";
 
 import TopBar from "./topbar";
 import 'katex/dist/katex.min.css';
-import { AuthProvider } from "@/contexts/AuthContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,10 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className={inter.className}>
-        <AuthProvider>
-          <TopBar />
-          {children}
-        </AuthProvider>
+        <TopBar />
+        {children}
       </body>
     </html>
   );
