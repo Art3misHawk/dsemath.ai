@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@/lib/supabase/client';
 import { login, signup } from './actions'
+import { createClient } from '@/lib/supabase/client';
 
 export default function LoginPage() {
   const supabase = createClient();
