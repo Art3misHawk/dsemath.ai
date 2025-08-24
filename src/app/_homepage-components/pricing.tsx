@@ -1,6 +1,5 @@
 import { Check, Star, Zap } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";4
-import { Button } from "@/components/ui/button";
 import { PricingPlanType } from "./Interface";
 import { PayButton } from "./client-components";
 
@@ -95,7 +94,7 @@ function PricingCard({plan, index}: PricingCardProps) {
   return(
     <Card 
       key={plan.name}
-      className={`relative hover:shadow-elegant transition-all duration-500 hover:scale-105 animate-slide-up ${
+      className={`relative bg-sky-100 hover:shadow-elegant transition-all duration-500 hover:scale-105 animate-slide-up ${
         plan.popular ? 'border-2 border-blue-500 shadow-2xl shadow-blue-500/25' : 'border border-gray-200/50'
       }`}
       style={{ animationDelay: `${index * 0.1}s` }}
@@ -110,7 +109,7 @@ function PricingCard({plan, index}: PricingCardProps) {
       )}
       
       <CardHeader className="text-center pb-8">
-        <CardTitle className="text-2xl font-bold mb-2">{plan.name}</CardTitle>
+        <CardTitle className="text-2xl font-bold mb-2 text-gray-500">{plan.name}</CardTitle>
         <div className="flex items-baseline justify-center space-x-1">
           <span className="text-4xl font-bold text-blue-600">
             {plan.price}
@@ -127,11 +126,11 @@ function PricingCard({plan, index}: PricingCardProps) {
               <div className="bg-secondary rounded-full p-1 mt-0.5">
                 <Check className="w-3 h-3 text-secondary-foreground" />
               </div>
-              <span className="text-sm">{feature}</span>
+              <span className="text-sm text-gray-500">{feature}</span>
             </li>
           ))}
         </ul>
-        
+
         <PayButton plan={plan} />
       </CardContent>
     </Card>

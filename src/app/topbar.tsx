@@ -152,11 +152,3 @@ export default function TopBar() {
     </header>
   );
 }
-
-export  function TempTopBar() {
-  return (
-    <div>
-      this is a top bar
-    </div>
-  )
-}

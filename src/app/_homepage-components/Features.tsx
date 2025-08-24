@@ -1,43 +1,43 @@
-import { Brain, Clock, Database, Target, Trophy, Users } from "lucide-react";
+import { BrainCircuit, Clock, BookCopy, Target, Trophy, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { featureType } from "./Interface";
 
 const features: featureType[] = [
   {
-    icon: Brain,
+    icon: BrainCircuit,
     title: "AI Question Generator",
     description: "Generate unlimited practice questions tailored to your learning level and weak points.",
-    gradient: "bg-blue-600",
+    gradient: "bg-blue-500",
   },
   {
-    icon: Database,
+    icon: BookCopy,
     title: "Comprehensive Question Bank",
     description: "Access 10,000+ curated DSE Math questions organized by topic and difficulty.",
-    gradient: "bg-blue-600",
+    gradient: "bg-blue-500",
   },
   {
     icon: Trophy,
     title: "Progress Tracking",
     description: "Track your improvement with detailed analytics and compete with peers.",
-    gradient: "bg-blue-600",
+    gradient: "bg-blue-500",
   },
   {
     icon: Target,
     title: "Targeted Practice",
     description: "Focus on your weak areas with AI-recommended practice sessions.",
-    gradient: "bg-blue-600",
+    gradient: "bg-blue-500",
   },
   {
     icon: Clock,
     title: "Time-Efficient Learning",
     description: "Maximize your study time with smart scheduling and priority-based learning.",
-    gradient: "bg-blue-600",
+    gradient: "bg-blue-500",
   },
   {
     icon: Users,
     title: "Peer Learning",
     description: "Join study groups and learn from top-performing students in Hong Kong.",
-    gradient: "bg-blue-600",
+    gradient: "bg-blue-500",
   },
 ];
 
@@ -80,7 +80,7 @@ function FeatureCards({ index, feature }: FeatureCardsProps) {
 
   return (
     <Card
-      className="group hover:shadow-elegant transition-all duration-500 hover:scale-105 border border-gray-200/50 bg-card/50 backdrop-blur-sm animate-slide-up"
+      className="group hover:shadow-elegant transition-all duration-500 hover:scale-105 border border-gray-200/50 bg-card/40 backdrop-blur-sm animate-slide-up"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       <CardContent className="p-8 text-center">

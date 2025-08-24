@@ -43,7 +43,7 @@ export default function FAQ() {
           <Title />
           <div className="max-w-3xl mx-auto animate-slide-up">
             <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => <FAQItem faq={faq} index={index} />)}
+              {faqs.map((faq, index) => <FAQItem key={faq.question} faq={faq} index={index} />)}
             </Accordion>
           </div>
           <ContactUs />
@@ -75,7 +75,7 @@ function FAQItem({ faq, index }: FAQItemProps) {
     <AccordionItem 
       key={index} 
       value={`item-${index}`}
-      className="bg-card/50 backdrop-blur-sm border border-gray-200/50 rounded-lg px-6 hover:shadow-card transition-all duration-300"
+      className="bg-card/20 backdrop-blur-sm border border-gray-200/50 rounded-lg px-6 hover:shadow-card transition-all duration-300"
     >
       <AccordionTrigger className="text-left font-semibold hover:text-primary transition-colors duration-300">
         {faq.question}

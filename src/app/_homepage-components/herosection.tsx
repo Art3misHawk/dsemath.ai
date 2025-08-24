@@ -3,7 +3,7 @@ import { HeroSectionNavigateButton } from "./client-components";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden select-none">
+    <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden select-none">
       <div className="container mx-auto px-4 py-8 max-w-6xl text-center space-y-8 animate-fade-in">
         <Island />
         <Slogan />

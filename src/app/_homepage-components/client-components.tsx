@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
-import { Zap } from "lucide-react";
+import { Zap, Brain } from "lucide-react";
 import { PricingPlanType } from "./Interface";
 
 interface HeroSectionNavigateButtonProps {
@@ -31,7 +31,11 @@ export function HeroSectionNavigateButton({children, target,}: HeroSectionNaviga
   );
 }
 
-export function PayButton(plan: PricingPlanType) {
+interface PricingButtonProps {
+  plan: PricingPlanType;
+}
+
+export function PayButton({plan}: PricingButtonProps) {
   const router = useRouter();
 
   const handleNavigate = () => {
@@ -47,6 +51,21 @@ export function PayButton(plan: PricingPlanType) {
     >
       {plan.buttonText}
       <Zap className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300" />
+    </Button>
+  )
+}
+
+export function FreeTrialCTAButton() {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push('payment');
+  };
+
+  return (
+    <Button variant="hero" size="lg" className="group" onClick={handleNavigate}>
+      Start Your Free Trial
+      <Brain className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
     </Button>
   )
 }

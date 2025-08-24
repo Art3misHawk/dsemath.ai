@@ -1,12 +1,13 @@
 import { Brain, Mail, Phone, MapPin, Facebook, Instagram,Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FreeTrialCTAButton } from "./client-components";
 
 const footerLinks = {
   product: [
-    { name: "AI Generator", href: "#generator" },
-    { name: "Question Bank", href: "#question-bank" },
-    { name: "Community", href: "#community" },
-    { name: "Mobile App", href: "#app" },
+    { name: "AI Generator", href: "ai-generator" },
+    { name: "Question Bank", href: "ai-question-bank" },
+    { name: "Community", href: "dashboard" },
+    { name: "Mobile App (coming soon)", href: "" },
   ],
   support: [
     { name: "Help Center", href: "#help" },
@@ -15,13 +16,11 @@ const footerLinks = {
     { name: "Bug Reports", href: "#bugs" },
   ],
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Careers", href: "#careers" },
-    { name: "Press Kit", href: "#press" },
-    { name: "Partners", href: "#partners" },
+    { name: "About Us", href: "aboutus#aboutus" },
+    { name: "Partners", href: "aboutus#partners" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "#privacy" },
+    { name: "Privacy Policy", href: "privacy" },
     { name: "Terms of Service", href: "#terms" },
     { name: "Cookie Policy", href: "#cookies" },
     { name: "Refund Policy", href: "#refunds" },
@@ -160,10 +159,7 @@ function CTA() {
         <p className="text-background/80 max-w-lg mx-auto">
           Join 15,000+ students who&apos;ve improved their DSE Math results with our AI-powered platform.
         </p>
-        <Button variant="hero" size="lg" className="group">
-          Start Your Free Trial
-          <Brain className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
-        </Button>
+        <FreeTrialCTAButton />
       </div>
     </div>
   )
@@ -181,19 +177,22 @@ function Bottom() {
       {/* Social Links */}
       <div className="flex items-center space-x-4">
         <a 
-          href="#facebook" 
+          href="https://www.facebook.com"
+          target="_blank"
           className="text-background/60 hover:text-blue-400 transition-colors duration-300"
         >
           <Facebook className="w-5 h-5" />
         </a>
         <a 
-          href="#instagram" 
+          href="https://www.instagram.com/"
+          target="_blank"
           className="text-background/60 hover:text-blue-400 transition-colors duration-300"
         >
           <Instagram className="w-5 h-5" />
         </a>
         <a 
-          href="#youtube" 
+          href="https://www.youtube.com"
+          target="_blank"
           className="text-background/60 hover:text-blue-400 transition-colors duration-300"
         >
           <Youtube className="w-5 h-5" />
