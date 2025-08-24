@@ -45,7 +45,7 @@ export default function TopBar() {
           ? 'h-12 bg-white backdrop-blur-none border-b border-gray-200 shadow-lg'
           : 'h-[68px] bg-white backdrop-blur-none border-b border-gray-100 shadow-md'
       }`}
-      style={{ position: 'fixed' }}
+      style={{ position: 'sticky' }}
     >
   
       
@@ -151,4 +151,12 @@ export default function TopBar() {
       </div>
     </header>
   );
+}
+
+export  function TempTopBar() {
+  return (
+    <div>
+      this is a top bar
+    </div>
+  )
 }

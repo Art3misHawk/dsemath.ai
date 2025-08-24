@@ -3,16 +3,15 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
+import { Zap } from "lucide-react";
+import { PricingPlanType } from "./Interface";
 
 interface HeroSectionNavigateButtonProps {
   children: ReactNode; // Allow any valid React node as children
   target: string; // The navigation path
 }
 
-export function HeroSectionNavigateButton({
-  children,
-  target,
-}: HeroSectionNavigateButtonProps) {
+export function HeroSectionNavigateButton({children, target,}: HeroSectionNavigateButtonProps) {
   const router = useRouter();
 
   const handleNavigate = () => {
@@ -30,4 +29,24 @@ export function HeroSectionNavigateButton({
       {children}
     </Button>
   );
+}
+
+export function PayButton(plan: PricingPlanType) {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push('payment');
+  };
+
+  return(
+    <Button 
+      variant={plan.variant} 
+      size="lg" 
+      className="w-full group"
+      onClick={handleNavigate}
+    >
+      {plan.buttonText}
+      <Zap className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300" />
+    </Button>
+  )
 }

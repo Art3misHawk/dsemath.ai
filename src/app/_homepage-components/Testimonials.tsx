@@ -1,13 +1,8 @@
-interface TestimonialType {
-  name: string;
-  school: string;
-  grade: string;
-  rating: number;
-  text: string;
-  improvement: string;
-}
+import { Card, CardContent } from "@/components/ui/card";
+import { Star, Quote } from "lucide-react";
+import { TestimonialType } from "./Interface";
 
-const testimonials = [
+const testimonials: TestimonialType[] = [
   {
     name: "Wong Ka Ming",
     school: "La Salle College",
@@ -60,23 +55,26 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-      <div>
-
-      </div>
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <Title />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => <TestimonialCard key={testimonial.name} testimonial={testimonial} index={index} />)}
+          </div>
+        </div>
+      </section>
     );
 }
 
 function Title() {
   return (
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-16 animate-fade-in">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-          What <span className="text-blue-600">Students</span> Say
-        </h2>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Join thousands of Hong Kong students who&apos;ve improved their DSE Math grades with our platform.
-        </p>
-      </div>
+    <div className="text-center mb-16 animate-fade-in">
+      <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        What <span className="text-blue-600">Students</span> Say
+      </h2>
+      <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        Join thousands of Hong Kong students who&apos;ve improved their DSE Math grades with our platform.
+      </p>
     </div>
   )
 }
@@ -86,11 +84,42 @@ interface TestimonialCardProps {
   index: number;
 }
 
-function testimonialCard({testimonial, index}: TestimonialCardProps) {
-    return(
-      <div>
-        
-      </div>
-    );
+function TestimonialCard({testimonial, index}: TestimonialCardProps) {
+  return(
+    <Card 
+      key={testimonial.name}
+      className="group hover:shadow-elegant transition-all duration-500 hover:scale-105 border border-gray-200/50 bg-card/50 backdrop-blur-sm animate-slide-up"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <CardContent className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex space-x-1">
+            {[...Array(testimonial.rating)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            ))}
+          </div>
+          <Quote className="w-6 h-6 text-muted-foreground/30" />
+        </div>
 
+        <p className="text-foreground mb-6 leading-relaxed">
+          &ldquo;{testimonial.text}&rdquo;
+        </p>
+
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="font-semibold text-foreground">{testimonial.name}</p>
+              <p className="text-sm text-muted-foreground">{testimonial.school}</p>
+              <p className="text-xs text-muted-foreground">{testimonial.grade}</p>
+            </div>
+            <div className="text-right">
+              <div className="text-emerald-600 font-bold text-sm">
+                {testimonial.improvement}
+              </div>
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
 }

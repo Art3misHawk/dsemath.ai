@@ -1,13 +1,6 @@
 import { Brain, Clock, Database, Target, Trophy, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { LucideIcon } from "lucide-react";
-
-interface featureType {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  gradient: string;
-}
+import { featureType } from "./Interface";
 
 const features: featureType[] = [
   {
@@ -32,7 +25,7 @@ const features: featureType[] = [
     icon: Target,
     title: "Targeted Practice",
     description: "Focus on your weak areas with AI-recommended practice sessions.",
-    gradient: "bg-red-600",
+    gradient: "bg-blue-600",
   },
   {
     icon: Clock,
@@ -50,12 +43,16 @@ const features: featureType[] = [
 
 export default function Features() {
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <Title />
-      {features.map((feature, index) => 
-        <FeatureCards key={feature.title} index={index} feature={feature} />
-      )}
-    </div>
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <Title />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => 
+            <FeatureCards key={feature.title} index={index} feature={feature} />
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
 

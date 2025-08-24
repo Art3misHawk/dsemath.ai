@@ -1,9 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-interface FAQType {
-  question: string;
-  answer: string;
-}
+import { FAQType } from "./Interface";
 
 const faqs: FAQType[] = [
   {
@@ -42,29 +38,29 @@ const faqs: FAQType[] = [
 
 export default function FAQ() {
   return (
-      <div>
-        <Title />
-        <div className="max-w-3xl mx-auto animate-slide-up">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => <FAQItem faq={faq} index={index} />)}
-          </Accordion>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <Title />
+          <div className="max-w-3xl mx-auto animate-slide-up">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => <FAQItem faq={faq} index={index} />)}
+            </Accordion>
+          </div>
+          <ContactUs />
         </div>
-        <ContactUs />
-      </div>
+      </section>
   )
 }
 
 function Title() {
   return (
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-16 animate-fade-in">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-          Frequently Asked <span className="text-blue-600">Questions</span>
-        </h2>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Got questions? We&apos;ve got answers. Here are the most common questions from students and parents.
-        </p>
-      </div>
+    <div className="text-center mb-16 animate-fade-in">
+      <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        Frequently Asked <span className="text-blue-600">Questions</span>
+      </h2>
+      <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        Got questions? We&apos;ve got answers. Here are the most common questions from students and parents.
+      </p>
     </div>
   )
 }
@@ -93,27 +89,25 @@ function FAQItem({ faq, index }: FAQItemProps) {
 
 function ContactUs() {
   return (
-    <div className="text-center mt-12 animate-fade-in">
-      <div className="bg-accent rounded-2xl p-8 max-w-2xl mx-auto">
-        <h3 className="text-xl font-bold mb-4">Still have questions?</h3>
-        <p className="text-muted-foreground mb-6">
-          Our support team is here to help you succeed. Get answers within 2 hours.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="mailto:support@dsemath.ai"
-            className="text-primary hover:text-primary/80 font-medium transition-colors duration-300"
-          >
-            support@dsemath.ai
-          </a>
-          <span className="hidden sm:inline text-muted-foreground">•</span>
-          <a 
-            href="tel:+85221234567"
-            className="text-primary hover:text-primary/80 font-medium transition-colors duration-300"
-          >
-            +852 xxxx xxxx
-          </a>
-        </div>
+    <div className="text-center mt-12 animate-fade-in bg-accent rounded-2xl p-8 max-w-2xl mx-auto">
+      <h3 className="text-xl font-bold mb-4">Still have questions?</h3>
+      <p className="text-muted-foreground mb-6">
+        Our support team is here to help you succeed. Get answers within 2 hours.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="mailto:support@dsemath.ai"
+          className="text-primary hover:text-primary/80 font-medium transition-colors duration-300"
+        >
+          support@dsemath.ai
+        </a>
+        <span className="hidden sm:inline text-muted-foreground">•</span>
+        <a 
+          href="tel:+85221234567"
+          className="text-primary hover:text-primary/80 font-medium transition-colors duration-300"
+        >
+          +852 xxxx xxxx
+        </a>
       </div>
     </div>
   )
