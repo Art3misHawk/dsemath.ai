@@ -48,11 +48,6 @@ const features: featureType[] = [
   },
 ];
 
-interface FeatureCardsProps {
-  index: number;
-  feature: featureType;
-}
-
 export default function Features() {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,6 +71,11 @@ function Title() {
       </p>
     </div>
   );
+}
+
+interface FeatureCardsProps {
+  index: number;
+  feature: featureType;
 }
 
 function FeatureCards({ index, feature }: FeatureCardsProps) {
