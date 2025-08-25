@@ -7,7 +7,7 @@ const footerLinks = {
     { name: "AI Generator", href: "ai-generator" },
     { name: "Question Bank", href: "ai-question-bank" },
     { name: "Community", href: "dashboard" },
-    { name: "Mobile App (coming soon)", href: "" },
+    { name: "Mobile App (Coming Soon)", href: "" },
   ],
   support: [
     { name: "Help Center", href: "#help" },

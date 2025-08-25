@@ -92,7 +92,7 @@ function Products() {
 
   return (
     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-      <HeroSectionNavigateButton target="ai-generator">
+      <HeroSectionNavigateButton target="question-bank">
         <span className="relative z-10 flex items-center gap-3 text-xl">Generate Questions</span>
       </HeroSectionNavigateButton>
       <HeroSectionNavigateButton target="ai-generator">

@@ -1,13 +1,13 @@
 import React from 'react';
 
-const QuestionBandPage: React.FC = () => {
+const QuestionBank: React.FC = () => {
     return (
         <main>
-            <h1>Question Band</h1>
-            <p>Welcome to the Question Band page.</p>
+            <h1>Question Bank</h1>
+            <p>Welcome to the Question Bank page.</p>
             {/* Add your content here */}
         </main>
     );
 };
 
-export default QuestionBandPage;
+export default QuestionBank;
