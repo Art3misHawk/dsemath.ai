@@ -107,7 +107,7 @@ function LoginButton() {
 
 function MobileNavBar() {
   return (
-    <nav className="md:hidden pb-4 border-t border-gray-200 pt-4 flex flex-col items-center bg-blue-50">
+    <nav className="md:hidden pb-4 border-t border-gray-200 pt-4 flex flex-col items-center bg-blue-50 shadow-md">
         {navItems.map((item) => 
           <Link
             key={item.name}
