@@ -64,7 +64,7 @@ function Description() {
   return (
     <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-400 max-w-4xl mx-auto leading-relaxed">
       Skip expensive tutoring centers.
-      Master <span className="font-medium text-blue-600 dark:text-blue-400">DSE Math</span> with AI that adapts to YOU.
+      Experience the future of math education with AI.
     </p>
   )
 }
@@ -74,7 +74,7 @@ function Features() {
     <div className="max-w-2xl mx-auto space-y-4">
       <div className="flex items-center justify-center gap-3 text-lg text-slate-700 dark:text-slate-300">
         <span className="text-green-500 font-bold text-xl">✓</span>
-        <span>Unlimited practice questions</span>
+        <span>Massive Question Bank</span>
       </div>
       <div className="flex items-center justify-center gap-3 text-lg text-slate-700 dark:text-slate-300">
         <span className="text-green-500 font-bold text-xl">✓</span>
@@ -107,7 +107,7 @@ function Footer() {
     <div className="flex flex-wrap items-center justify-center gap-8 text-base text-slate-500 dark:text-slate-400">
       <div className="flex items-center space-x-3">
         <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse" />
-        <span>10,000+ Questions</span>
+        <span>10,00+ Questions</span>
       </div>
       <div className="flex items-center space-x-3">
         <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-pulse" />

@@ -6,8 +6,8 @@ import { PayButton } from "./client-components";
 const pricingPlans: PricingPlanType[] = [
   {
     name: "Basic",
-    price: "HK$99",
-    period: "/month",
+    price: "Free",
+    period: "",
     description: "Perfect for getting started with DSE Math prep",
     features: [
       "100 AI-generated questions/month",
@@ -21,8 +21,8 @@ const pricingPlans: PricingPlanType[] = [
     popular: false
   },
   {
-    name: "Premium",
-    price: "HK$199",
+    name: "Pro",
+    price: "HK$149",
     period: "/month",
     description: "Most popular choice for serious students",
     features: [
@@ -39,8 +39,8 @@ const pricingPlans: PricingPlanType[] = [
     popular: true
   },
   {
-    name: "Elite",
-    price: "HK$299",
+    name: "Premium",
+    price: "HK$399",
     period: "/month",
     description: "For students aiming for top grades",
     features: [
