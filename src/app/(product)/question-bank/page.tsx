@@ -41,6 +41,42 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
           name: 'Rate & Ratio', 
           questions: 24,
           icon: '⚖️'
+        },
+        { 
+          id: 'jf-binary-numbers', 
+          name: 'Binary Numbers', 
+          questions: 18,
+          icon: '🔢'
+        },
+        { 
+          id: 'jf-estimation-error', 
+          name: 'Estimation and Error', 
+          questions: 22,
+          icon: '📊'
+        },
+        { 
+          id: 'jf-factorization', 
+          name: 'Factorization', 
+          questions: 26,
+          icon: '🔤'
+        },
+        { 
+          id: 'jf-simultaneous-equations', 
+          name: 'Simultaneous Equations', 
+          questions: 30,
+          icon: '🔗'
+        },
+        { 
+          id: 'jf-polygons', 
+          name: 'Polygons', 
+          questions: 25,
+          icon: '🔷'
+        },
+        { 
+          id: 'jf-basic-triangles', 
+          name: 'Basic Triangles and its Properties', 
+          questions: 27,
+          icon: '🔺'
         }
       ]
     },
@@ -60,15 +96,45 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
           icon: '📐'
         },
         { 
-          id: 'f4-probability', 
-          name: 'Introduction to Probability', 
-          questions: 15,
-          icon: '🎲'
+          id: 'f4-rational-functions', 
+          name: 'Rational Functions', 
+          questions: 20,
+          icon: '🔢'
         },
         { 
-          id: 'f4-algebra', 
-          name: 'Algebraic Expressions', 
-          questions: 22,
+          id: 'f4-logarithms', 
+          name: 'Logarithms Functions', 
+          questions: 16,
+          icon: '📈'
+        },
+        { 
+          id: 'f4-exponential', 
+          name: 'Exponential Functions', 
+          questions: 19,
+          icon: '📊'
+        },
+        { 
+          id: 'f4-circle-properties', 
+          name: 'Basic Properties of Circle', 
+          questions: 21,
+          icon: '⭕'
+        },
+        { 
+          id: 'f4-trigonometry-more', 
+          name: 'More about Trigonometry', 
+          questions: 17,
+          icon: '📐'
+        },
+        { 
+          id: 'f4-straight-lines', 
+          name: 'Equations of Straight Lines', 
+          questions: 23,
+          icon: '📏'
+        },
+        { 
+          id: 'f4-functions', 
+          name: 'Functions', 
+          questions: 25,
           icon: '🔤'
         }
       ]
@@ -77,29 +143,52 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
       color: '#DC2626',
       topics: [
         { 
-          id: 'f5-trigonometry', 
-          name: 'Trigonometry', 
+          id: 'f5-trigo-2d', 
+          name: 'Trigo 2D', 
           questions: 28,
           icon: '📐'
         },
         { 
-          id: 'f5-exponential', 
-          name: 'Exponential & Logarithmic Functions', 
+          id: 'f5-trigo-3d', 
+          name: 'Trigo 3D', 
+          questions: 25,
+          icon: '�'
+        },
+        { 
+          id: 'f5-equations-circles', 
+          name: 'Equations of Circles', 
+          questions: 22,
+          icon: '⭕'
+        },
+        { 
+          id: 'f5-variations', 
+          name: 'Variations', 
+          questions: 14,
+          icon: '⚖️'
+        },
+        { 
+          id: 'f5-probability', 
+          name: 'Probability', 
+          questions: 26,
+          icon: '🎲'
+        },
+        { 
+          id: 'f5-more-statistics', 
+          name: 'More about Statistics', 
+          questions: 23,
+          icon: '📊'
+        },
+        { 
+          id: 'f5-inequalities', 
+          name: 'Inequalities', 
           questions: 19,
-          icon: '📈'
+          icon: '≠'
         },
         { 
-          id: 'f5-sequences', 
-          name: 'Sequences & Series', 
-          questions: 16,
-          difficulty: 'Intermediate',
-          icon: '🔢'
-        },
-        { 
-          id: 'f5-coordinate', 
-          name: 'Coordinate Geometry', 
-          questions: 21,
-          icon: '📍'
+          id: 'f5-more-equations', 
+          name: 'More about Equations', 
+          questions: 24,
+          icon: '🔧'
         }
       ]
     },
@@ -113,22 +202,16 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
           icon: '∫'
         },
         { 
-          id: 'f6-complex', 
-          name: 'Complex Numbers', 
-          questions: 14,
-          icon: '🔄'
-        },
-        { 
           id: 'f6-linearprogramming', 
           name: 'Linear Programming', 
           questions: 18,
           icon: '⬜'
         },
         { 
-          id: 'f6-statistics', 
-          name: 'Advanced Statistics', 
-          questions: 25,
-          icon: '📊'
+          id: 'f6-4-centers', 
+          name: '4 Centers', 
+          questions: 20,
+          icon: '⊕'
         }
       ]
     }
@@ -142,9 +225,7 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             Question Bank
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Explore our comprehensive collection of topics from Junior Form to Form 6.
-          </p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed whitespace-nowrap">Explore our comprehensive collection of topics from Junior Form to Form 6.</p>
         </div>
 
         {/* Topics by Form - 4 Column Layout */}
@@ -267,18 +348,32 @@ function PracticeSessionPage({ onBack }: { onBack: () => void }) {
     { id: 'jf-areas-volumes', name: 'Areas and Volumes', form: 'F1-3', questions: 32, icon: '📐', color: '#10B981' },
     { id: 'jf-percentages', name: 'Percentages', form: 'F1-3', questions: 28, icon: '%', color: '#10B981' },
     { id: 'jf-rate-ratio', name: 'Rate & Ratio', form: 'F1-3', questions: 24, icon: '⚖️', color: '#10B981' },
+    { id: 'jf-binary-numbers', name: 'Binary Numbers', form: 'F1-3', questions: 18, icon: '🔢', color: '#10B981' },
+    { id: 'jf-estimation-error', name: 'Estimation and Error', form: 'F1-3', questions: 22, icon: '📊', color: '#10B981' },
+    { id: 'jf-factorization', name: 'Factorization', form: 'F1-3', questions: 26, icon: '🔤', color: '#10B981' },
+    { id: 'jf-simultaneous-equations', name: 'Simultaneous Equations', form: 'F1-3', questions: 30, icon: '🔗', color: '#10B981' },
+    { id: 'jf-polygons', name: 'Polygons', form: 'F1-3', questions: 25, icon: '🔷', color: '#10B981' },
+    { id: 'jf-basic-triangles', name: 'Basic Triangles and its Properties', form: 'F1-3', questions: 27, icon: '🔺', color: '#10B981' },
     { id: 'f4-quadratic', name: 'Quadratic Functions', form: 'Form 4', questions: 24, icon: '📊', color: '#059669' },
     { id: 'f4-geometry', name: 'Basic Geometry', form: 'Form 4', questions: 18, icon: '📐', color: '#059669' },
-    { id: 'f4-probability', name: 'Introduction to Probability', form: 'Form 4', questions: 15, icon: '🎲', color: '#059669' },
-    { id: 'f4-algebra', name: 'Algebraic Expressions', form: 'Form 4', questions: 22, icon: '🔤', color: '#059669' },
-    { id: 'f5-trigonometry', name: 'Trigonometry', form: 'Form 5', questions: 28, icon: '📐', color: '#DC2626' },
-    { id: 'f5-exponential', name: 'Exponential & Logarithmic Functions', form: 'Form 5', questions: 19, icon: '📈', color: '#DC2626' },
-    { id: 'f5-sequences', name: 'Sequences & Series', form: 'Form 5', questions: 16, icon: '🔢', color: '#DC2626' },
-    { id: 'f5-coordinate', name: 'Coordinate Geometry', form: 'Form 5', questions: 21, icon: '📍', color: '#DC2626' },
+    { id: 'f4-rational-functions', name: 'Rational Functions', form: 'Form 4', questions: 20, icon: '🔢', color: '#059669' },
+    { id: 'f4-logarithms', name: 'Logarithms Functions', form: 'Form 4', questions: 16, icon: '📈', color: '#059669' },
+    { id: 'f4-exponential', name: 'Exponential Functions', form: 'Form 4', questions: 19, icon: '📊', color: '#059669' },
+    { id: 'f4-circle-properties', name: 'Basic Properties of Circle', form: 'Form 4', questions: 21, icon: '⭕', color: '#059669' },
+    { id: 'f4-trigonometry-more', name: 'More about Trigonometry', form: 'Form 4', questions: 17, icon: '📐', color: '#059669' },
+    { id: 'f4-straight-lines', name: 'Equations of Straight Lines', form: 'Form 4', questions: 23, icon: '📏', color: '#059669' },
+    { id: 'f4-functions', name: 'Functions', form: 'Form 4', questions: 25, icon: '🔤', color: '#059669' },
+    { id: 'f5-trigo-2d', name: 'Trigo 2D', form: 'Form 5', questions: 28, icon: '📐', color: '#DC2626' },
+    { id: 'f5-trigo-3d', name: 'Trigo 3D', form: 'Form 5', questions: 25, icon: '�', color: '#DC2626' },
+    { id: 'f5-equations-circles', name: 'Equations of Circles', form: 'Form 5', questions: 22, icon: '⭕', color: '#DC2626' },
+    { id: 'f5-variations', name: 'Variations', form: 'Form 5', questions: 14, icon: '⚖️', color: '#DC2626' },
+    { id: 'f5-probability', name: 'Probability', form: 'Form 5', questions: 26, icon: '🎲', color: '#DC2626' },
+    { id: 'f5-more-statistics', name: 'More about Statistics', form: 'Form 5', questions: 23, icon: '📊', color: '#DC2626' },
+    { id: 'f5-inequality', name: 'Inequality', form: 'Form 5', questions: 19, icon: '≠', color: '#DC2626' },
+    { id: 'f5-more-equations', name: 'More about Equations', form: 'Form 5', questions: 24, icon: '🔧', color: '#DC2626' },
     { id: 'f6-calculus', name: 'Introduction to Calculus', form: 'Form 6', questions: 32, icon: '∫', color: '#7C3AED' },
-    { id: 'f6-complex', name: 'Complex Numbers', form: 'Form 6', questions: 14, icon: '🔄', color: '#7C3AED' },
     { id: 'f6-matrices', name: 'Matrices & Determinants', form: 'Form 6', questions: 18, icon: '⬜', color: '#7C3AED' },
-    { id: 'f6-statistics', name: 'Advanced Statistics', form: 'Form 6', questions: 25, icon: '📊', color: '#7C3AED' }
+    { id: 'f6-4-centers', name: '4 Centers', form: 'Form 6', questions: 20, icon: '⊕', color: '#7C3AED' }
   ];
 
   const questionCountOptions = [10, 20, 30, 45];
