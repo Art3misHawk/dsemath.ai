@@ -140,39 +140,34 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Mathematics Question Bank
+            Question Bank
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Explore our comprehensive collection of math topics from Form 4 to Form 6. 
-            Browse through different topics to see what's available for practice.
+            Explore our comprehensive collection of topics from Form 4 to Form 6.
           </p>
         </div>
 
-        {/* Topics by Form - Browse Only */}
-        <div className="space-y-16">
+        {/* Topics by Form - 3 Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {Object.entries(mathTopicsByForm).map(([formName, formData]) => (
             <div key={formName} className="relative">
               {/* Form Header */}
-              <div className="flex items-center mb-8">
+              <div className="text-center mb-8">
                 <div 
-                  className="h-1 flex-1 rounded-full mr-6"
+                  className="h-1 w-16 rounded-full mx-auto mb-4"
                   style={{ backgroundColor: formData.color }}
                 />
-                <h2 className="text-3xl font-bold text-gray-800 whitespace-nowrap">
+                <h2 className="text-2xl font-bold text-gray-800">
                   {formName}
                 </h2>
-                <div 
-                  className="h-1 flex-1 rounded-full ml-6"
-                  style={{ backgroundColor: formData.color }}
-                />
               </div>
 
               {/* Topics Grid - Browse Only */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="space-y-6">
                 {formData.topics.map((topic) => (
                   <div
                     key={topic.id}
-                    className="group relative bg-white rounded-3xl p-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border border-gray-100 overflow-hidden"
+                    className="group relative bg-white rounded-3xl p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border border-gray-100 overflow-hidden"
                   >
                     {/* Gradient Background Effect */}
                     <div 
@@ -181,16 +176,16 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
                     />
                     
                     {/* Topic Icon & Count */}
-                    <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-start justify-between mb-4">
                       <div className="relative">
                         <div 
-                          className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-all duration-300"
+                          className="w-12 h-12 rounded-xl flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition-all duration-300"
                           style={{ backgroundColor: `${formData.color}15`, border: `2px solid ${formData.color}30` }}
                         >
                           {topic.icon}
                         </div>
                         <div 
-                          className="absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md"
+                          className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md"
                           style={{ backgroundColor: formData.color }}
                         >
                           {topic.questions}
@@ -199,7 +194,7 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
                       
                       <div className="text-right">
                         <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Available</div>
-                        <div className="text-2xl font-bold" style={{ color: formData.color }}>
+                        <div className="text-lg font-bold" style={{ color: formData.color }}>
                           {topic.questions}
                         </div>
                         <div className="text-xs text-gray-400">questions</div>
@@ -207,26 +202,13 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
                     </div>
 
                     {/* Topic Info */}
-                    <div className="space-y-3">
-                      <h3 className="font-bold text-xl text-gray-900 group-hover:text-gray-700 transition-colors leading-tight">
+                    <div className="space-y-2">
+                      <h3 className="font-bold text-lg text-gray-900 group-hover:text-gray-700 transition-colors leading-tight">
                         {topic.name}
                       </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
                         {topic.description}
                       </p>
-                    </div>
-                    
-                    {/* Footer */}
-                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
-                      <span 
-                        className="px-4 py-2 rounded-full text-xs font-semibold text-white shadow-sm"
-                        style={{ backgroundColor: formData.color }}
-                      >
-                        {topic.difficulty}
-                      </span>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-600 transition-colors">
-                        {formName}
-                      </div>
                     </div>
 
                     {/* Hover Effect Line */}
@@ -256,7 +238,7 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
 
               <button
                 onClick={onStartPractice}
-                className="px-12 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-bold text-lg transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="px-12 py-4 bg-sky-600 text-white rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-sky-700 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Start Practice Session
               </button>
