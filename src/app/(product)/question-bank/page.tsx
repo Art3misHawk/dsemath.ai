@@ -107,8 +107,8 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
       color: '#7C3AED',
       topics: [
         { 
-          id: 'f6-calculus', 
-          name: 'Introduction to Calculus', 
+          id: 'f6-sequences', 
+          name: 'Sequences', 
           questions: 32,
           icon: '∫'
         },
@@ -119,8 +119,8 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
           icon: '🔄'
         },
         { 
-          id: 'f6-matrices', 
-          name: 'Matrices & Determinants', 
+          id: 'f6-linearprogramming', 
+          name: 'Linear Programming', 
           questions: 18,
           icon: '⬜'
         },
