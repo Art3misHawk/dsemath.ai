@@ -9,7 +9,7 @@ const navItems = [
   { name: "Question Bank", href: "/question-bank" },
   { name: "Community", href: "/community" },
   { name: "Dashboard", href: "/dashboard" },
-  { name: "Settings", href: "/setting" },
+  { name: "Settings", href: "/settings" },
 ];
 
 export default function TopBar() {
