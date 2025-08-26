@@ -21,9 +21,9 @@ export default function Sidebar() {
       <h2 className="text-xl font-semibold mb-6">Settings</h2>
       <ul className="flex flex-col space-y-2">
         {settingsPages.map((page) => 
-          <li>
+          <li key={page.href}>
             <SidebarItem
-              key={page.href}
+              
               name={page.name}
               href={page.href}
             />
