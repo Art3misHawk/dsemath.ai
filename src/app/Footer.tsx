@@ -1,6 +1,6 @@
 import { Brain, Mail, Phone, MapPin, Facebook, Instagram,Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FreeTrialCTAButton } from "./client-components";
+import { FreeTrialCTAButton } from "./_homepage-components/client-components";
 
 const footerLinks = {
   product: [

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import TopBar from "./Topbar";
+import Footer from "./Footer";
 import 'katex/dist/katex.min.css';
 
 const inter = Inter({
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <TopBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
