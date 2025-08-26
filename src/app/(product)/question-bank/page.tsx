@@ -21,39 +21,54 @@ export default function QuestionBankSystem() {
 // Question Bank Page Component - Just for browsing topics
 function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) {
   const mathTopicsByForm = {
+    'Junior Form': {
+      color: '#10B981',
+      topics: [
+        { 
+          id: 'jf-areas-volumes', 
+          name: 'Areas and Volumes', 
+          questions: 32,
+          icon: '📐'
+        },
+        { 
+          id: 'jf-percentages', 
+          name: 'Percentages', 
+          questions: 28,
+          icon: '%'
+        },
+        { 
+          id: 'jf-rate-ratio', 
+          name: 'Rate & Ratio', 
+          questions: 24,
+          icon: '⚖️'
+        }
+      ]
+    },
     'Form 4': {
       color: '#059669',
       topics: [
         { 
           id: 'f4-quadratic', 
-          name: 'Quadratic Functions', 
-          description: 'Solving quadratic equations, graphing parabolas, vertex form',
+          name: 'Quadratic Equations', 
           questions: 24,
-          difficulty: 'Basic to Intermediate',
           icon: '📊'
         },
         { 
           id: 'f4-geometry', 
-          name: 'Basic Geometry', 
-          description: 'Angles, triangles, polygons, and basic geometric proofs',
+          name: 'Polynomials', 
           questions: 18,
-          difficulty: 'Basic',
           icon: '📐'
         },
         { 
           id: 'f4-probability', 
           name: 'Introduction to Probability', 
-          description: 'Basic probability concepts, simple events, tree diagrams',
           questions: 15,
-          difficulty: 'Basic to Intermediate',
           icon: '🎲'
         },
         { 
           id: 'f4-algebra', 
           name: 'Algebraic Expressions', 
-          description: 'Factoring, expanding, simplifying algebraic expressions',
           questions: 22,
-          difficulty: 'Basic to Intermediate',
           icon: '🔤'
         }
       ]
@@ -64,23 +79,18 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
         { 
           id: 'f5-trigonometry', 
           name: 'Trigonometry', 
-          description: 'Sine, cosine, tangent, trigonometric identities and equations',
           questions: 28,
-          difficulty: 'Intermediate to Advanced',
           icon: '📐'
         },
         { 
           id: 'f5-exponential', 
           name: 'Exponential & Logarithmic Functions', 
-          description: 'Exponential growth/decay, logarithmic properties and equations',
           questions: 19,
-          difficulty: 'Intermediate to Advanced',
           icon: '📈'
         },
         { 
           id: 'f5-sequences', 
           name: 'Sequences & Series', 
-          description: 'Arithmetic and geometric sequences, series, and summation',
           questions: 16,
           difficulty: 'Intermediate',
           icon: '🔢'
@@ -88,9 +98,7 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
         { 
           id: 'f5-coordinate', 
           name: 'Coordinate Geometry', 
-          description: 'Lines, circles, parabolas in coordinate systems',
           questions: 21,
-          difficulty: 'Intermediate to Advanced',
           icon: '📍'
         }
       ]
@@ -101,33 +109,25 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
         { 
           id: 'f6-calculus', 
           name: 'Introduction to Calculus', 
-          description: 'Limits, derivatives, basic integration techniques',
           questions: 32,
-          difficulty: 'Advanced',
           icon: '∫'
         },
         { 
           id: 'f6-complex', 
           name: 'Complex Numbers', 
-          description: 'Complex arithmetic, polar form, De Moivre\'s theorem',
           questions: 14,
-          difficulty: 'Advanced',
           icon: '🔄'
         },
         { 
           id: 'f6-matrices', 
           name: 'Matrices & Determinants', 
-          description: 'Matrix operations, determinants, solving linear systems',
           questions: 18,
-          difficulty: 'Advanced',
           icon: '⬜'
         },
         { 
           id: 'f6-statistics', 
           name: 'Advanced Statistics', 
-          description: 'Normal distribution, hypothesis testing, regression',
           questions: 25,
-          difficulty: 'Advanced',
           icon: '📊'
         }
       ]
@@ -143,12 +143,12 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
             Question Bank
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Explore our comprehensive collection of topics from Form 4 to Form 6.
+            Explore our comprehensive collection of topics from Junior Form to Form 6.
           </p>
         </div>
 
-        {/* Topics by Form - 3 Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        {/* Topics by Form - 4 Column Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {Object.entries(mathTopicsByForm).map(([formName, formData]) => (
             <div key={formName} className="relative">
               {/* Form Header */}
@@ -206,9 +206,6 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
                       <h3 className="font-bold text-lg text-gray-900 group-hover:text-gray-700 transition-colors leading-tight">
                         {topic.name}
                       </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
-                        {topic.description}
-                      </p>
                     </div>
 
                     {/* Hover Effect Line */}
@@ -261,6 +258,9 @@ function PracticeSessionPage({ onBack }: { onBack: () => void }) {
   const [selectionMode, setSelectionMode] = useState('multiple');
 
   const mathTopics = [
+    { id: 'jf-areas-volumes', name: 'Areas and Volumes', form: 'Junior Form', questions: 32, icon: '📐', color: '#10B981' },
+    { id: 'jf-percentages', name: 'Percentages', form: 'Junior Form', questions: 28, icon: '%', color: '#10B981' },
+    { id: 'jf-rate-ratio', name: 'Rate & Ratio', form: 'Junior Form', questions: 24, icon: '⚖️', color: '#10B981' },
     { id: 'f4-quadratic', name: 'Quadratic Functions', form: 'Form 4', questions: 24, icon: '📊', color: '#059669' },
     { id: 'f4-geometry', name: 'Basic Geometry', form: 'Form 4', questions: 18, icon: '📐', color: '#059669' },
     { id: 'f4-probability', name: 'Introduction to Probability', form: 'Form 4', questions: 15, icon: '🎲', color: '#059669' },
