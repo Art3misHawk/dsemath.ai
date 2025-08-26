@@ -5,7 +5,7 @@ import { FreeTrialCTAButton } from "./client-components";
 const footerLinks = {
   product: [
     { name: "AI Generator", href: "ai-generator" },
-    { name: "Question Bank", href: "ai-question-bank" },
+    { name: "Question Bank", href: "question-bank" },
     { name: "Community", href: "dashboard" },
     { name: "Mobile App (Coming Soon)", href: "" },
   ],

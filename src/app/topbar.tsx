@@ -38,7 +38,7 @@ export default function TopBar() {
 
         {/* Mobile Menu Button - Absolutely rightmost */}
         <button
-          className="lg:hidden rounded-full hover:bg-accent/50 transition-all duration-500 flex-shrink-0 mr-4 p-2"
+          className="md:hidden rounded-full hover:bg-accent/50 transition-all duration-500 flex-shrink-0 mr-4 p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? ( <X className="w-6 h-6" />) : (<Menu className="w-6 h-6" />)}
@@ -76,7 +76,7 @@ function Logo() {
 
 function NavBar() {
   return (
-    <nav className="hidden lg:flex items-center justify-center w-full space-x-1 lg:space-x-2 xl:space-x-3">
+    <nav className="md:flex items-center justify-center w-full space-x-1 lg:space-x-2 xl:space-x-3">
       {navItems.map((item) => (
         <Link
           key={item.name}
@@ -107,7 +107,7 @@ function LoginButton() {
 
 function MobileNavBar() {
   return (
-    <nav className="lg:hidden pb-4 border-t border-gray-200 pt-4 flex flex-col items-center bg-blue-50 shadow-md">
+    <nav className="md:hidden pb-4 border-t border-gray-200 pt-4 flex flex-col items-center bg-blue-50 shadow-md">
         {navItems.map((item) => 
           <Link
             key={item.name}
