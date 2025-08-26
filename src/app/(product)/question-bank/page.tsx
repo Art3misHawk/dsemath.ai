@@ -154,7 +154,7 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
               {/* Form Header */}
               <div className="text-center mb-8">
                 <div 
-                  className="h-1 w-16 rounded-full mx-auto mb-4"
+                  className="h-1 w-full rounded-full mx-auto mb-4"
                   style={{ backgroundColor: formData.color }}
                 />
                 <h2 className="text-2xl font-bold text-gray-800">
