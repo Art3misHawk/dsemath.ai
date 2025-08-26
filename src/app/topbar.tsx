@@ -38,7 +38,7 @@ export default function TopBar() {
 
         {/* Mobile Menu Button - Absolutely rightmost */}
         <button
-          className="md:hidden rounded-full hover:bg-accent/50 transition-all duration-500 flex-shrink-0 mr-4 p-2"
+          className="lg:hidden rounded-full hover:bg-accent/50 transition-all duration-500 flex-shrink-0 mr-4 p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? ( <X className="w-6 h-6" />) : (<Menu className="w-6 h-6" />)}
@@ -76,14 +76,14 @@ function Logo() {
 
 function NavBar() {
   return (
-    <nav className="md:flex items-center justify-center w-full space-x-1 lg:space-x-2 xl:space-x-3">
+    <nav className="hidden lg:flex items-center justify-center w-full space-x-1 lg:space-x-2 xl:space-x-3">
       {navItems.map((item) => (
         <Link
           key={item.name}
           href={item.href}
           className="space-x-1 lg:space-x-2 text-sky-600 hover:text-sky-700 transition-all duration-300 px-2 py-2 text-xs lg:px-3 lg:py-2.5 lg:text-sm xl:px-4 xl:py-3 xl:text-base bg-transparent rounded-none shadow-none hover:bg-sky-100 hover:shadow-lg hover:shadow-sky-200/60 hover:scale-105 hover:rounded-full font-sans font-medium tracking-normal"
         >
-          <span className="hidden lg:block text-xs lg:text-sm xl:text-base">
+          <span className="hidden md:block text-xs lg:text-sm xl:text-base">
             {item.name}
           </span>
         </Link>
@@ -107,7 +107,7 @@ function LoginButton() {
 
 function MobileNavBar() {
   return (
-    <nav className="md:hidden pb-4 border-t border-gray-200 pt-4 flex flex-col items-center bg-blue-50 shadow-md">
+    <nav className="lg:hidden pb-4 border-t border-gray-200 pt-4 flex flex-col items-center bg-blue-50 shadow-md">
         {navItems.map((item) => 
           <Link
             key={item.name}
