@@ -107,7 +107,7 @@ function Footer() {
     <div className="flex flex-wrap items-center justify-center gap-8 text-base text-slate-500 dark:text-slate-400">
       <div className="flex items-center space-x-3">
         <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse" />
-        <span>10,00+ Questions</span>
+        <span>1000+ Questions</span>
       </div>
       <div className="flex items-center space-x-3">
         <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-pulse" />

@@ -161,8 +161,9 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
                   {formName}
                 </h2>
               </div>
+              
 
-              {/* Topics Grid - Browse Only */}
+          {/* Topics Grid - Browse Only */}
               <div className="space-y-6">
                 {formData.topics.map((topic) => (
                   <div
@@ -219,6 +220,13 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
             </div>
           ))}
         </div>
+
+          {/* Disclaimer */}
+          <div className="mt-3 text-center">
+            <p className="text-xs text-gray-400 text-[10px]">
+              * Topic classifications are based on a general secondary school curriculum and may vary between different schools or education systems.
+            </p>
+          </div>
 
         {/* Practice Session CTA */}
         <div className="mt-20">
@@ -663,6 +671,13 @@ function PracticeSessionPage({ onBack }: { onBack: () => void }) {
                   </div>
                 </div>
               )}
+
+              {/* Disclaimer */}
+              <div className="mt-3 text-center">
+                <p className="text-xs text-gray-400 text-[10px]">
+                  * Topic classifications are based on a general secondary school curriculum and may vary between different schools or education systems.
+                </p>
+              </div>
             </div>
           </div>
 
