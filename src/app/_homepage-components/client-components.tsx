@@ -11,7 +11,7 @@ interface HeroSectionNavigateButtonProps {
   target: string; // The navigation path
 }
 
-export function HeroSectionNavigateButton({children, target,}: HeroSectionNavigateButtonProps) {
+export function HeroSectionNavigateButton({ children, target }: HeroSectionNavigateButtonProps) {
   const router = useRouter();
 
   const handleNavigate = () => {

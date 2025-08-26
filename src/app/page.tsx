@@ -3,7 +3,7 @@ import Features from "./_homepage-components/Features";
 import Pricing from "./_homepage-components/Pricing";
 /*import Testimonials from "./_homepage-components/Testimonials"; */
 import FAQ from "./_homepage-components/FAQ";
-// import Footer from "./Footer";
+import Footer from "./_homepage-components/Footer";
 
 
 export default function HomePage() {
@@ -14,7 +14,7 @@ export default function HomePage() {
         <Pricing />
         {/* <Testimonials /> */}
         <FAQ />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     );
 }
