@@ -18,12 +18,10 @@ const settingsPages: SettingsPagesType[] = [
 export default function Sidebar() {
   return (
     <nav className="bg-blue-100 text-gray-500 w-64 min-h-screen p-6 flex flex-col">
-      <h2 className="text-xl font-semibold mb-6">Settings</h2>
       <ul className="flex flex-col space-y-2">
         {settingsPages.map((page) => 
           <li key={page.href}>
             <SidebarItem
-              
               name={page.name}
               href={page.href}
             />
