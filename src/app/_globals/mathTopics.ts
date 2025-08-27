@@ -1,13 +1,31 @@
-const mathTopics = [
-  { id: 'jf-areas-volumes', name: 'Areas and Volumes', form: 'F1-3', questions: 32, icon: '📐', color: '#10B981' },
-  { id: 'jf-percentages', name: 'Percentages', form: 'F1-3', questions: 28, icon: '%', color: '#10B981' },
-  { id: 'jf-rate-ratio', name: 'Rate & Ratio', form: 'F1-3', questions: 24, icon: '⚖️', color: '#10B981' },
-  { id: 'jf-binary-numbers', name: 'Binary Numbers', form: 'F1-3', questions: 18, icon: '🔢', color: '#10B981' },
-  { id: 'jf-estimation-error', name: 'Estimation and Error', form: 'F1-3', questions: 22, icon: '📊', color: '#10B981' },
-  { id: 'jf-factorization', name: 'Factorization', form: 'F1-3', questions: 26, icon: '🔤', color: '#10B981' },
-  { id: 'jf-simultaneous-equations', name: 'Simultaneous Equations', form: 'F1-3', questions: 30, icon: '🔗', color: '#10B981' },
-  { id: 'jf-polygons', name: 'Polygons', form: 'F1-3', questions: 25, icon: '🔷', color: '#10B981' },
-  { id: 'jf-basic-triangles', name: 'Basic Triangles and its Properties', form: 'F1-3', questions: 27, icon: '🔺', color: '#10B981' },
+export const AvailableForms = [
+  'Junior',
+  'Form 4',
+  'Form 5',
+  'Form 6'
+] as const;
+
+export type FormType = typeof AvailableForms[number];
+
+export interface mathTopicsType {
+  id: string;
+  name: string;
+  form: FormType;
+  questions: number;
+  icon: string;
+  color: string;
+}
+
+const mathTopics: mathTopicsType[] = [
+  { id: 'jf-areas-volumes', name: 'Areas and Volumes', form: 'Junior', questions: 32, icon: '📐', color: '#10B981' },
+  { id: 'jf-percentages', name: 'Percentages', form: 'Junior', questions: 28, icon: '%', color: '#10B981' },
+  { id: 'jf-rate-ratio', name: 'Rate & Ratio', form: 'Junior', questions: 24, icon: '⚖️', color: '#10B981' },
+  { id: 'jf-binary-numbers', name: 'Binary Numbers', form: 'Junior', questions: 18, icon: '🔢', color: '#10B981' },
+  { id: 'jf-estimation-error', name: 'Estimation and Error', form: 'Junior', questions: 22, icon: '📊', color: '#10B981' },
+  { id: 'jf-factorization', name: 'Factorization', form: 'Junior', questions: 26, icon: '🔤', color: '#10B981' },
+  { id: 'jf-simultaneous-equations', name: 'Simultaneous Equations', form: 'Junior', questions: 30, icon: '🔗', color: '#10B981' },
+  { id: 'jf-polygons', name: 'Polygons', form: 'Junior', questions: 25, icon: '🔷', color: '#10B981' },
+  { id: 'jf-basic-triangles', name: 'Basic Triangles and its Properties', form: 'Junior', questions: 27, icon: '🔺', color: '#10B981' },
   { id: 'f4-quadratic', name: 'Quadratic Functions', form: 'Form 4', questions: 24, icon: '📊', color: '#059669' },
   { id: 'f4-geometry', name: 'Basic Geometry', form: 'Form 4', questions: 18, icon: '📐', color: '#059669' },
   { id: 'f4-rational-functions', name: 'Rational Functions', form: 'Form 4', questions: 20, icon: '🔢', color: '#059669' },
@@ -29,6 +47,5 @@ const mathTopics = [
   { id: 'f6-matrices', name: 'Matrices & Determinants', form: 'Form 6', questions: 18, icon: '⬜', color: '#7C3AED' },
   { id: 'f6-4-centers', name: '4 Centers', form: 'Form 6', questions: 20, icon: '⊕', color: '#7C3AED' }
 ];
-
 
 export default mathTopics

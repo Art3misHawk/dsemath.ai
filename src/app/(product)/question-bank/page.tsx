@@ -1,5 +1,5 @@
 import Link from "next/link";
-import mathTopicsByForm from "@/app/_globals/mathTopicsByForm";
+import mathTopicsByForm from "@/app/_globals/mathTopicsByForm_decrepited";
 import Head from "next/head";
 
 export default function QuestionBankPage() {

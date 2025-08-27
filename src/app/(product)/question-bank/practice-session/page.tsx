@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from "next/link";
-import mathTopics from '@/app/_globals/mathTopicByForm2';
+import mathTopics from '@/app/_globals/mathTopics';
 
 export default function PracticeSessionPage() {
   const [questionCount, setQuestionCount] = useState(10);
