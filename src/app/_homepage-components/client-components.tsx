@@ -123,10 +123,10 @@ export function GlassmorphismGenerateButton() {
     <Button 
       variant="hero" 
       size="lg" 
-      className="group relative backdrop-blur-lg bg-gradient-to-r from-emerald-600/30 via-green-500/35 to-emerald-700/30 hover:from-emerald-500/40 hover:via-green-400/45 hover:to-emerald-600/40 border border-emerald-300/40 hover:border-emerald-200/60 text-white hover:text-emerald-50 font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 backdrop-saturate-150 overflow-hidden"
+      className="group relative backdrop-blur-lg bg-gradient-to-r from-emerald-800/70 via-green-700/75 to-emerald-900/70 hover:from-emerald-700/80 hover:via-green-600/85 hover:to-emerald-800/80 border border-emerald-300/40 hover:border-emerald-200/60 text-white hover:text-emerald-50 font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 backdrop-saturate-150 overflow-hidden"
       onClick={handleNavigate}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/15 via-green-300/15 to-emerald-500/15 rounded-2xl blur-sm" />
+      <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/35 via-green-500/35 to-emerald-700/35 rounded-2xl blur-sm" />
       <div className="relative flex items-center gap-3">
         <FileText className="w-5 h-5 text-emerald-100 group-hover:text-white transition-colors duration-300" />
         <span className="text-emerald-50 group-hover:text-white font-semibold">Generate Complete Paper</span>
@@ -147,10 +147,10 @@ export function GlassmorphismBrowseButton() {
     <Button 
       variant="hero" 
       size="lg" 
-      className="group relative backdrop-blur-lg bg-gradient-to-r from-blue-600/30 via-cyan-500/35 to-blue-700/30 hover:from-blue-500/40 hover:via-cyan-400/45 hover:to-blue-600/40 border border-blue-300/40 hover:border-blue-200/60 text-white hover:text-blue-50 font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 backdrop-saturate-150 overflow-hidden"
+      className="group relative backdrop-blur-lg bg-gradient-to-r from-blue-800/70 via-cyan-700/75 to-blue-900/70 hover:from-blue-700/80 hover:via-cyan-600/85 hover:to-blue-800/80 border border-blue-300/40 hover:border-blue-200/60 text-white hover:text-blue-50 font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 backdrop-saturate-150 overflow-hidden"
       onClick={handleNavigate}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/15 via-cyan-300/15 to-blue-500/15 rounded-2xl blur-sm" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/35 via-cyan-500/35 to-blue-700/35 rounded-2xl blur-sm" />
       <div className="relative flex items-center gap-3">
         <Search className="w-5 h-5 text-blue-100 group-hover:text-white transition-colors duration-300" />
         <span className="text-blue-50 group-hover:text-white font-semibold">Browse Question Bank</span>
