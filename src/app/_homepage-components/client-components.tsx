@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
-import { Zap, Brain } from "lucide-react";
+import { Zap } from "lucide-react";
 import { PricingPlanType } from "./Interface";
 
 interface HeroSectionNavigateButtonProps {
@@ -31,6 +31,30 @@ export function HeroSectionNavigateButton({ children, target }: HeroSectionNavig
   );
 }
 
+// Special glassmorphism button for "Get Early Access" only
+export function GlassmorphismButton({ children, target }: HeroSectionNavigateButtonProps) {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push(target);
+  };
+
+  return (
+    <button
+      className="group relative px-10 py-5 bg-white/30 backdrop-blur-xl border-2 border-white/60 text-white font-bold rounded-2xl text-xl shadow-2xl hover:bg-white/40 hover:border-white/80 transition-all duration-500 hover:scale-110 hover:rotate-1"
+      onClick={handleNavigate}
+      aria-label={`Navigate to ${target}`}
+      style={{ fontFamily: '"Poppins", sans-serif' }}
+    >
+      <span className="relative z-10 flex items-center gap-3 tracking-wide">
+        ✨ {children}
+      </span>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-pink-500/40 rounded-2xl group-hover:from-blue-600/60 group-hover:via-purple-600/60 group-hover:to-pink-600/60 transition duration-500"></div>
+      <div className="absolute -inset-1 bg-gradient-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 rounded-2xl blur-lg group-hover:blur-xl group-hover:from-blue-500/50 group-hover:via-purple-500/50 group-hover:to-pink-500/50 transition duration-500"></div>
+    </button>
+  );
+}
+
 interface PricingButtonProps {
   plan: PricingPlanType;
 }
@@ -42,25 +66,11 @@ export function PayButton({plan}: PricingButtonProps) {
     router.push('payment');
   };
 
-  // Consistent styling for all buttons with proper alignment and text color
-  let buttonClassName = "w-full group text-white font-semibold border-0 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105";
-  
-  if (plan.variant === "outline") {
-    // Start Free - Light blue gradient
-    buttonClassName += " bg-gradient-to-r from-sky-400 via-sky-300 to-sky-500 hover:from-sky-500 hover:via-sky-400 hover:to-sky-600 hover:text-white";
-  } else if (plan.variant === "hero") {
-    // Go Pro - Blue gradient  
-    buttonClassName += " bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 hover:from-blue-700 hover:via-blue-600 hover:to-blue-800 hover:text-white";
-  } else if (plan.variant === "default") {
-    // Go Premium - Teal gradient
-    buttonClassName += " bg-gradient-to-r from-teal-500 via-teal-400 to-teal-600 hover:from-teal-600 hover:via-teal-500 hover:to-teal-700 hover:text-white";
-  }
-
   return(
     <Button 
       variant={plan.variant} 
       size="lg" 
-      className={buttonClassName}
+      className="w-full group"
       onClick={handleNavigate}
     >
       {plan.buttonText}

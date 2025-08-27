@@ -1,40 +1,49 @@
-import { BrainCircuit, Clock, BookCopy, Target, Trophy, Users } from "lucide-react";
+import {  
+  HiChartBar,
+  HiLightningBolt 
+} from "react-icons/hi";
+import { BiBarChartSquare } from "react-icons/bi";
+import { 
+  RiAiGenerate2 ,
+  RiShareLine
+} from "react-icons/ri";
+import { TbTargetArrow } from "react-icons/tb";
 import { Card, CardContent } from "@/components/ui/card";
 import { featureType } from "./Interface";
 
 const features: featureType[] = [
   {
-    icon: BrainCircuit,
+    icon: RiAiGenerate2,
     title: "AI Question Generator",
     description: "Generate unlimited practice questions tailored to your learning level and weak points.",
     gradient: "bg-blue-500",
   },
   {
-    icon: BookCopy,
+    icon: BiBarChartSquare,
     title: "Comprehensive Question Bank",
     description: "Access 10,000+ curated DSE Math questions organized by topic and difficulty.",
     gradient: "bg-blue-500",
   },
   {
-    icon: Trophy,
+    icon: HiChartBar,
     title: "Progress Tracking",
     description: "Track your improvement with detailed analytics and compete with peers.",
     gradient: "bg-blue-500",
   },
   {
-    icon: Target,
+    icon: TbTargetArrow,
     title: "Targeted Practice",
     description: "Focus on your weak areas with AI-recommended practice sessions.",
     gradient: "bg-blue-500",
   },
   {
-    icon: Clock,
+    icon: HiLightningBolt,
     title: "Time-Efficient Learning",
     description: "Maximize your study time with smart scheduling and priority-based learning.",
     gradient: "bg-blue-500",
   },
   {
-    icon: Users,
+    icon: RiShareLine,
     title: "Peer Learning",
     description: "Join study groups and learn from top-performing students in Hong Kong.",
     gradient: "bg-blue-500",

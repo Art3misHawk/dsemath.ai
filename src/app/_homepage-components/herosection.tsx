@@ -1,5 +1,5 @@
 import { Sparkles } from "lucide-react";
-import { HeroSectionNavigateButton, FreeTrialCTAButton } from "./client-components";
+import { HeroSectionNavigateButton, FreeTrialCTAButton, GlassmorphismButton } from "./client-components";
 import { min } from "date-fns";
 
 
@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 py-8 max-w-6xl text-center space-y-8 animate-fade-in">
         <Island />
         <Slogan />
-        <HeroSectionNavigateButton target="/payment"> Get Early Access!</HeroSectionNavigateButton>
+        <GlassmorphismButton target="/payment"> Get Early Access Now!</GlassmorphismButton>
         <Description />
         <Features />
         <Products />
@@ -66,8 +66,7 @@ function Slogan() {
 function Description() {
   return (
     <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-400 max-w-4xl mx-auto leading-relaxed">
-      Skip expensive tutoring centers.
-      Experience the future of math education with AI.
+      Skip expensive tutoring centers. Experience the future of math education with AI.
     </p>
   )
 }
