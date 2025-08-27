@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { SettingsType } from '@/app/_types/settings';
+import SettingsType from '@/app/_globals/settings';
 import AppearanceSection from './_components/Apparance';
 import PrivacySection from './_components/Privacy';
 import NotificationsSection from './_components/Notification';
