@@ -28,7 +28,7 @@ const footerLinks = {
 
 export default function Footer () {
   return (
-      <footer className="bg-foreground text-background py-16">  
+      <footer className="bg-foreground text-background pt-16 pb-2">
         <div className="container mx-auto px-4">
           <MainContent />
           <CTA />
@@ -150,8 +150,8 @@ function FooterLinks() {
 
 function CTA() {
   return (
-    <div className="border-t border-background/20 pt-12 mb-12">
-      <div className="text-center space-y-6">
+    <div className="border-t border-background/20 pt-8 mb-4"> 
+      <div className="text-center space-y-4">
         <h3 className="text-2xl font-bold">Ready to Transform Your Math Grades?</h3>
         <p className="text-background/80 max-w-lg mx-auto">
           Join xxx students who&apos;ve improved their DSE Math results with our AI-powered platform.
