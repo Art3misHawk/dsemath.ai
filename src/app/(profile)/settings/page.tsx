@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { SettingsType } from '@/app/_types/settings';
-import AppearanceSection from './Apparance';
-import PrivacySection from './Privacy';
-import NotificationsSection from './notification';
+import AppearanceSection from './_components/Apparance';
+import PrivacySection from './_components/Privacy';
+import NotificationsSection from './_components/Notification';
 
 // Helper function to fetch settings from server
 function fetchSettings(
