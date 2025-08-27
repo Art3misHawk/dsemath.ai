@@ -1,7 +1,5 @@
 import { Sparkles } from "lucide-react";
 import { HeroSectionNavigateButton, FreeTrialCTAButton, GlassmorphismButton } from "./client-components";
-import { min } from "date-fns";
-
 
 export default function HeroSection() {
   return (
@@ -65,7 +63,7 @@ function Slogan() {
 
 function Description() {
   return (
-    <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-400 max-w-4xl mx-auto leading-relaxed">
+    <p className="text-xl lg:text-2xl xl:whitespace-nowrap text-slate-600 dark:text-slate-400 max-w-4xl mx-auto leading-relaxed">
       Skip expensive tutoring centers. Experience the future of math education with AI.
     </p>
   )

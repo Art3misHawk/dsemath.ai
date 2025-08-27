@@ -89,19 +89,19 @@ function FeatureCards({ index, feature }: FeatureCardsProps) {
 
   return (
     <Card
-      className="group hover:shadow-elegant transition-all duration-500 hover:scale-105 border border-gray-200/50 bg-card/40 backdrop-blur-sm animate-slide-up"
+      className="border border-gray-200/50 bg-sky-100 animate-slide-up"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       <CardContent className="p-8 text-center">
         <div className="relative mb-6">
           <div
-            className={`w-20 h-20 mx-auto ${feature.gradient} rounded-2xl flex items-center justify-center shadow-card group-hover:shadow-glow transition-all duration-500`}
+            className={`w-20 h-20 mx-auto ${feature.gradient} rounded-2xl flex items-center justify-center shadow-card`}
           >
-            <Icon className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-500" />
+            <Icon className="w-10 h-10 text-white" />
           </div>
         </div>
 
-        <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+        <h3 className="text-xl text-black font-bold mb-4">
           {feature.title}
         </h3>
 

@@ -1,5 +1,5 @@
 import { Check, Star, Zap } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";4
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PricingPlanType } from "./Interface";
 import { PayButton } from "./client-components";
 
@@ -94,7 +94,7 @@ function PricingCard({plan, index}: PricingCardProps) {
   return(
     <Card 
       key={plan.name}
-      className={`relative bg-sky-100 hover:shadow-elegant transition-all duration-500 hover:scale-105 animate-slide-up flex flex-col h-full ${
+      className={`relative bg-sky-100 hover:shadow-elegant transition-shadow duration-500 animate-slide-up flex flex-col h-full ${
         plan.popular ? 'border-2 border-blue-500 shadow-2xl shadow-blue-500/25' : 'border border-gray-200/50'
       }`}
       style={{ animationDelay: `${index * 0.1}s` }}

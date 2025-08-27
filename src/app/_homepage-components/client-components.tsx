@@ -66,11 +66,24 @@ export function PayButton({plan}: PricingButtonProps) {
     router.push('payment');
   };
 
+  // Define gradient styles based on plan
+  const getButtonStyles = () => {
+    switch(plan.name) {
+      case "Basic":
+        return "bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 hover:from-slate-600 hover:via-slate-700 hover:to-slate-800 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-slate-500/25";
+      case "Pro":
+        return "bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-blue-500/25";
+      case "Premium":
+        return "bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:from-purple-600 hover:via-purple-700 hover:to-purple-800 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-purple-500/25";
+      default:
+        return "bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-blue-500/25";
+    }
+  };
+
   return(
     <Button 
-      variant={plan.variant} 
       size="lg" 
-      className="w-full group"
+      className={`w-full group font-semibold rounded-xl transition-all duration-300 hover:scale-105 transform ${getButtonStyles()}`}
       onClick={handleNavigate}
     >
       {plan.buttonText}

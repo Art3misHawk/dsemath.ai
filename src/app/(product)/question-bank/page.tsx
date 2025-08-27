@@ -225,7 +225,7 @@ function QuestionBankPage({ onStartPractice }: { onStartPractice: () => void }) 
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             Question Bank
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed whitespace-nowrap">Explore our comprehensive collection of topics from Junior Form to Form 6.</p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed whitespace-nowrap">Explore our comprehensive collection of topics from Junior Form to Form 6</p>
         </div>
 
         {/* Topics by Form - 4 Column Layout */}
