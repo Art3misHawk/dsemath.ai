@@ -43,7 +43,6 @@ function MainContent() {
       {/* Brand & Description */}
       <div className="lg:col-span-2 space-y-6">
         <div className="flex items-center space-x-2">
-          <Brain className="w-8 h-8 text-blue-600" />
           <div className="text-2xl font-bold text-blue-600">
             dsemath.ai
           </div>
@@ -57,7 +56,7 @@ function MainContent() {
         <div className="space-y-3">
           <div className="flex items-center space-x-3 text-sm text-background/80">
             <Mail className="w-4 h-4" />
-            <span>support@dsemath.ai</span>
+            <span>dsemathai20@gmail.com</span>
           </div>
           <div className="flex items-center space-x-3 text-sm text-background/80">
             <Phone className="w-4 h-4" />
@@ -155,7 +154,7 @@ function CTA() {
       <div className="text-center space-y-6">
         <h3 className="text-2xl font-bold">Ready to Transform Your Math Grades?</h3>
         <p className="text-background/80 max-w-lg mx-auto">
-          Join 15,000+ students who&apos;ve improved their DSE Math results with our AI-powered platform.
+          Join xxx students who&apos;ve improved their DSE Math results with our AI-powered platform.
         </p>
         <FreeTrialCTAButton />
       </div>

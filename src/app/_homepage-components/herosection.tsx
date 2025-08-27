@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 py-8 max-w-6xl text-center space-y-8 animate-fade-in">
         <Island />
         <Slogan />
-        <HeroSectionNavigateButton target="/login"> Start your free trial</HeroSectionNavigateButton>
+        <HeroSectionNavigateButton target="/payment"> Get Early Access!</HeroSectionNavigateButton>
         <Description />
         <Features />
         <Products />

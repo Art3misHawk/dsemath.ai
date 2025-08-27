@@ -12,7 +12,7 @@ const faqs: FAQType[] = [
   },
   {
     question: "Can I use this on my phone?",
-    answer: "Absolutely! DSEMath.ai is fully responsive and works perfectly on phones, tablets, and computers. Our mobile app provides the same features as the web version, so you can study anywhere, anytime."
+    answer: "Absolutely! dsemath.ai is fully responsive and works perfectly on phones, tablets, and computers. Our mobile app provides the same features as the web version, so you can study anywhere, anytime."
   },
   {
     question: "How much money can I really save compared to tutoring?",
@@ -20,7 +20,7 @@ const faqs: FAQType[] = [
   },
   {
     question: "What if I'm not satisfied with the service?",
-    answer: "We offer a 14-day free trial and 30-day money-back guarantee. If you're not completely satisfied, we'll refund your payment, no questions asked. We're confident you'll see improvement in your first week."
+    answer: "We offer a 14-day money-back guarantee. If you're not completely satisfied, we'll refund your payment, no questions asked. We're confident you'll see improvement in your first two weeks."
   },
   {
     question: "How quickly will I see improvement in my grades?",

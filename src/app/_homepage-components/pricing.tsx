@@ -16,7 +16,7 @@ const pricingPlans: PricingPlanType[] = [
       "Email support",
       "Mobile app access"
     ],
-    buttonText: "Start Free Trial",
+    buttonText: "Start Free",
     variant: "outline",
     popular: false
   },
@@ -34,7 +34,7 @@ const pricingPlans: PricingPlanType[] = [
       "Performance predictions",
       "Personalized study plans"
     ],
-    buttonText: "Get Premium",
+    buttonText: "Go Pro",
     variant: "hero",
     popular: true
   },
@@ -52,7 +52,7 @@ const pricingPlans: PricingPlanType[] = [
       "Family progress sharing",
       "University prep materials"
     ],
-    buttonText: "Go Elite",
+    buttonText: "Go Premium",
     variant: "default",
     popular: false
   }
@@ -79,7 +79,7 @@ function Title() {
         Simple, <span className="text-emerald-600">Affordable</span> Pricing
       </h2>
       <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-        Choose the plan that fits your learning goals. All plans include a 14-day free trial.
+        Choose the plan that fits your learning goals.
       </p>
     </div>
   )
@@ -94,7 +94,7 @@ function PricingCard({plan, index}: PricingCardProps) {
   return(
     <Card 
       key={plan.name}
-      className={`relative bg-sky-100 hover:shadow-elegant transition-all duration-500 hover:scale-105 animate-slide-up ${
+      className={`relative bg-sky-100 hover:shadow-elegant transition-all duration-500 hover:scale-105 animate-slide-up flex flex-col h-full ${
         plan.popular ? 'border-2 border-blue-500 shadow-2xl shadow-blue-500/25' : 'border border-gray-200/50'
       }`}
       style={{ animationDelay: `${index * 0.1}s` }}
@@ -119,8 +119,8 @@ function PricingCard({plan, index}: PricingCardProps) {
         <p className="text-muted-foreground mt-4">{plan.description}</p>
       </CardHeader>
       
-      <CardContent className="space-y-6">
-        <ul className="space-y-4">
+      <CardContent className="space-y-6 flex flex-col flex-grow">
+        <ul className="space-y-4 flex-grow">
           {plan.features.map((feature) => (
             <li key={feature} className="flex items-start space-x-3">
               <div className="bg-secondary rounded-full p-1 mt-0.5">
@@ -131,7 +131,9 @@ function PricingCard({plan, index}: PricingCardProps) {
           ))}
         </ul>
 
-        <PayButton plan={plan} />
+        <div className="mt-auto">
+          <PayButton plan={plan} />
+        </div>
       </CardContent>
     </Card>
   )
@@ -141,13 +143,9 @@ function Footer() {
     return(
       <div className="text-center mt-12 animate-fade-in">
         <p className="text-muted-foreground mb-6">
-          Compared to traditional tutoring (HK$2,000+/month), save 90% with dsemath.ai
+          Compared to traditional tutoring (~HK$1000+/month), save 90% with dsemath.ai
         </p>
-        <div className="flex items-center justify-center space-x-8 text-sm">
-          <div className="flex items-center space-x-2">
-            <Check className="w-4 h-4 text-secondary" />
-            <span>14-day free trial</span>
-          </div>
+        <div className="flex items-center justify-center space-x-8">
           <div className="flex items-center space-x-2">
             <Check className="w-4 h-4 text-secondary" />
             <span>Cancel anytime</span>

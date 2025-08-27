@@ -42,11 +42,25 @@ export function PayButton({plan}: PricingButtonProps) {
     router.push('payment');
   };
 
+  // Consistent styling for all buttons with proper alignment and text color
+  let buttonClassName = "w-full group text-white font-semibold border-0 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105";
+  
+  if (plan.variant === "outline") {
+    // Start Free - Light blue gradient
+    buttonClassName += " bg-gradient-to-r from-sky-400 via-sky-300 to-sky-500 hover:from-sky-500 hover:via-sky-400 hover:to-sky-600 hover:text-white";
+  } else if (plan.variant === "hero") {
+    // Go Pro - Blue gradient  
+    buttonClassName += " bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 hover:from-blue-700 hover:via-blue-600 hover:to-blue-800 hover:text-white";
+  } else if (plan.variant === "default") {
+    // Go Premium - Teal gradient
+    buttonClassName += " bg-gradient-to-r from-teal-500 via-teal-400 to-teal-600 hover:from-teal-600 hover:via-teal-500 hover:to-teal-700 hover:text-white";
+  }
+
   return(
     <Button 
       variant={plan.variant} 
       size="lg" 
-      className="w-full group"
+      className={buttonClassName}
       onClick={handleNavigate}
     >
       {plan.buttonText}
@@ -63,9 +77,13 @@ export function FreeTrialCTAButton() {
   };
 
   return (
-    <Button variant="hero" size="lg" className="group" onClick={handleNavigate}>
-      Start Your Free Trial
-      <Brain className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
+    <Button 
+      variant="hero" 
+      size="lg" 
+      className="group relative bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 hover:from-blue-700 hover:via-blue-600 hover:to-blue-800 text-white font-semibold border-0 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" 
+      onClick={handleNavigate}
+    >
+      Start Your Journey 
     </Button>
   )
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import TopBar from "./Topbar";
+import TopBar from "./topbar";
 import Footer from "./Footer";
 import 'katex/dist/katex.min.css';
 
