@@ -11,7 +11,6 @@ export default function HeroSection() {
         <Description />
         <Features />
         <Products />
-        <Footer />
       </div>
     </section>
   );
@@ -89,7 +88,6 @@ function Features() {
 }
 
 function Products() {
-
   return (
     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
       <GlassmorphismGenerateButton />
