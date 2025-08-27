@@ -195,4 +195,4 @@ const mathTopicsByForm = {
   }
 };
 
-export default mathTopicsByForm
+export default mathTopicsByForm;
