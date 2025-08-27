@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { SettingsType } from '@/app/_types/settings';
+import SettingsType from '@/app/_globals/settings';
 
 export async function GET() {
   try {

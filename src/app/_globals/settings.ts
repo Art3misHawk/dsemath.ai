@@ -1,4 +1,4 @@
-export interface SettingsType {
+interface SettingsType {
   notifications: {
     email: boolean;
     weeklyReports: boolean;
@@ -12,3 +12,5 @@ export interface SettingsType {
     showOnlineStatus: boolean;
   };
 }
+
+export default SettingsType

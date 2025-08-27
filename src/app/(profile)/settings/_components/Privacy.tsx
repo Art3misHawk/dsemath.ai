@@ -1,5 +1,5 @@
 import React from 'react';
-import { SettingsType } from '@/app/_types/settings';
+import SettingsType from '@/app/_globals/settings';
 
 export default function PrivacySection(props: {
   privacy: SettingsType['privacy'];
