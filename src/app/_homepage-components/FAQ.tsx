@@ -92,7 +92,7 @@ function ContactUs() {
     <div className="text-center mt-12 animate-fade-in bg-accent rounded-2xl p-8 max-w-2xl mx-auto">
       <h3 className="text-xl font-bold mb-4">Still have questions?</h3>
       <p className="text-muted-foreground mb-6">
-        Our support team is here to help you succeed. We'll get back to you as soon as possible.
+        Our support team is here to help you succeed. We will get back to you as soon as possible.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
