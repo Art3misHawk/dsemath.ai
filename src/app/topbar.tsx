@@ -51,7 +51,7 @@ export default function TopBar() {
 
 function Logo() {
   return (
-    <Link className="pl-4" href="/">
+    <Link className="pl-4 transition-transform duration-300 hover:scale-105" href="/">
       <svg 
         width="140" height="32" viewBox="0 0 140 32" fill="none" 
         xmlns="http://www.w3.org/2000/svg"
