@@ -54,9 +54,9 @@ function Introduction() {
     <section>
       <h2 className="text-2xl font-bold text-gray-800 mb-4">1. Introduction</h2>
       <p className="text-gray-600 leading-relaxed">
-        Welcome to dsemath.ai ("we," "our," or "us"). These Terms of Service ("Terms") govern your 
+        Welcome to dsemath.ai (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your 
         use of our AI-powered mathematics learning platform, including our website, mobile applications, 
-        and all related services (collectively, the "Service"). By accessing or using our Service, 
+        and all related services (collectively, the &quot;Service&quot;). By accessing or using our Service, 
         you agree to be bound by these Terms.
       </p>
     </section>
@@ -78,7 +78,7 @@ function AcceptanceOfTerms() {
             <div>
               <p className="text-yellow-800 font-medium">Important:</p>
               <p className="text-yellow-700">
-                If you are under 18 years old, you must have your parent or guardian's permission 
+                If you are under 18 years old, you must have your parent or guardian&apos;s permission 
                 to use our Service and they must agree to these Terms on your behalf.
               </p>
             </div>
@@ -314,7 +314,7 @@ function ChangesToTerms() {
       <h2 className="text-2xl font-bold text-gray-800 mb-4">12. Changes to Terms</h2>
       <p className="text-gray-600 leading-relaxed">
         We may update these Terms from time to time. We will notify you of any material changes by 
-        posting the new Terms on this page and updating the "Last Updated" date. Your continued use 
+        posting the new Terms on this page and updating the &quot;Last Updated&quot; date. Your continued use 
         of the Service after such changes constitutes acceptance of the new Terms.
       </p>
     </section>

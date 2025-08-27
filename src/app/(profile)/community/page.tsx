@@ -31,6 +31,10 @@ import {
   HiChartBar
 } from "react-icons/hi2";
 
+// Types
+type TabId = 'leaderboard' | 'friends' | 'discussions' | 'activity';
+type LeaderboardFilter = 'weekly' | 'monthly' | 'alltime';
+
 // Mock data - In real app, this would come from API
 const mockLeaderboardData = [
   { id: 1, name: "Alice Chan", avatar: "AC", score: 2850, rank: 1, streak: 15, badge: "crown" },
@@ -62,8 +66,8 @@ const mockDiscussions = [
 ];
 
 export default function CommunityPage() {
-  const [activeTab, setActiveTab] = useState<'leaderboard' | 'friends' | 'discussions' | 'activity'>('leaderboard');
-  const [leaderboardFilter, setLeaderboardFilter] = useState<'weekly' | 'monthly' | 'alltime'>('weekly');
+  const [activeTab, setActiveTab] = useState<TabId>('leaderboard');
+  const [leaderboardFilter, setLeaderboardFilter] = useState<LeaderboardFilter>('weekly');
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -109,8 +113,8 @@ function CommunityHeader() {
 }
 
 function TabNavigation({ activeTab, setActiveTab }: { 
-  activeTab: string; 
-  setActiveTab: (tab: 'leaderboard' | 'friends' | 'discussions' | 'activity') => void;
+  activeTab: TabId; 
+  setActiveTab: (tab: TabId) => void;
 }) {
   const tabs = [
     { id: 'leaderboard', label: 'Leaderboard', icon: HiTrophy },
@@ -127,7 +131,7 @@ function TabNavigation({ activeTab, setActiveTab }: {
           return (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => setActiveTab(tab.id as TabId)}
               className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 flex-1 justify-center ${
                 activeTab === tab.id
                   ? 'bg-blue-600 text-white shadow-lg'
@@ -145,8 +149,8 @@ function TabNavigation({ activeTab, setActiveTab }: {
 }
 
 function LeaderboardSection({ filter, setFilter }: { 
-  filter: string; 
-  setFilter: (filter: 'weekly' | 'monthly' | 'alltime') => void;
+  filter: LeaderboardFilter; 
+  setFilter: (filter: LeaderboardFilter) => void;
 }) {
   const filters = [
     { id: 'weekly', label: 'This Week' },
@@ -166,7 +170,7 @@ function LeaderboardSection({ filter, setFilter }: {
             {filters.map((f) => (
               <button
                 key={f.id}
-                onClick={() => setFilter(f.id as any)}
+                onClick={() => setFilter(f.id as LeaderboardFilter)}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                   filter === f.id
                     ? 'bg-blue-600 text-white'
