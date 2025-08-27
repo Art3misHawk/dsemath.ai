@@ -17,7 +17,7 @@ export default function HeroSection() {
   );
 }
 
-function Island(){;
+function Island() {;
     return (
       <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100/80 to-blue-200/60 backdrop-blur-sm px-6 py-3 rounded-full text-blue-800 text-sm font-medium shadow-lg border border-blue-200/20 mx-auto dark:from-blue-900/80 dark:to-blue-800/60 dark:text-blue-200 dark:border-blue-800/20">
         <Sparkles className="w-4 h-4 animate-pulse text-blue-600 dark:text-blue-400" /> 
