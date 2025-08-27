@@ -98,7 +98,7 @@ function DailyStudyReminders ({
   updateSetting: (key: keyof NotificationSettingsType, value: boolean | string) => void;
 }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 flex">
       <div className="flex items-center justify-between">
         <div className="space-y-0.5">
           <Label htmlFor="study-reminders">Daily Study Reminders</Label>
