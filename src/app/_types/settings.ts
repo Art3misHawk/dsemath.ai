@@ -1,4 +1,8 @@
-export interface Settings {
+export interface SettingsType {
+  notifications: {
+    email: boolean;
+    weeklyReports: boolean;
+  };
   appearance: {
     theme: 'light' | 'dark' | 'system';
     fontSize: 'small' | 'medium' | 'large';
@@ -6,10 +10,5 @@ export interface Settings {
   privacy: {
     shareData: boolean;
     showOnlineStatus: boolean;
-  };
-  notifications: {
-    email: boolean;
-    push: boolean;
-    sms: boolean;
   };
 }

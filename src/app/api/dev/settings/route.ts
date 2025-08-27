@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { SettingsType } from '@/app/_types/settings';
 
 export async function GET() {
   try {
     // Template settings object
-    const templateSettings = {
+    const templateSettings: SettingsType = {
       appearance: {
         theme: 'system',
         fontSize: 'medium',
@@ -14,8 +15,7 @@ export async function GET() {
       },
       notifications: {
         email: true,
-        push: true,
-        sms: false,
+        weeklyReports: true,
       },
     };
     return NextResponse.json(templateSettings, { status: 200 });
