@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import mathTopicsByForm from "@/app/_globals/mathTopicsByForm_decrepited";
 import Head from "next/head";
 import { nestMathTopicsByForm } from "@/app/utils/NestMathTopics";
 import { formUIColor } from '@/app/_globals/mathTopics'
@@ -52,50 +51,53 @@ function QuestionTopicBank() {
                   key={topic.id}
                   className="group relative bg-white rounded-3xl p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border border-gray-100 overflow-hidden"
                 >
-                  {/* Gradient Background Effect */}
-                  <div 
-                    className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500"
-                    style={{ backgroundColor: formUIColor[formName] }}
-                  />
-                  
-                  {/* Topic Icon & Count */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="relative">
-                      <div 
-                        className="w-12 h-12 rounded-xl flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition-all duration-300"
-                        style={{ backgroundColor: `${formUIColor[formName]}15`, border: `2px solid ${formUIColor[formName]}30` }}
-                      >
-                        {topic.icon}
-                      </div>
-                      <div 
-                        className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md"
-                        style={{ backgroundColor: formUIColor[formName] }}
-                      >
-                        {topic.questions}
-                      </div>
-                    </div>
+                  <Link href={`/question-bank/${topic.id}`}>
+                    {/* Gradient Background Effect */}
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500"
+                      style={{ backgroundColor: formUIColor[formName] }}
+                    />
                     
-                    <div className="text-right">
-                      <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Available</div>
-                      <div className="text-lg font-bold" style={{ color: formUIColor[formName] }}>
-                        {topic.questions}
+                    {/* Topic Icon & Count */}
+                                    
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="relative">
+                        <div 
+                          className="w-12 h-12 rounded-xl flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition-all duration-300"
+                          style={{ backgroundColor: `${formUIColor[formName]}15`, border: `2px solid ${formUIColor[formName]}30` }}
+                        >
+                          {topic.icon}
+                        </div>
+                        <div 
+                          className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md"
+                          style={{ backgroundColor: formUIColor[formName] }}
+                        >
+                          {topic.questions}
+                        </div>
                       </div>
-                      <div className="text-xs text-gray-400">questions</div>
+                      
+                      <div className="text-right">
+                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Available</div>
+                        <div className="text-lg font-bold" style={{ color: formUIColor[formName] }}>
+                          {topic.questions}
+                        </div>
+                        <div className="text-xs text-gray-400">questions</div>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Topic Info */}
-                  <div className="space-y-2">
-                    <h3 className="font-bold text-lg text-gray-900 group-hover:text-gray-700 transition-colors leading-tight">
-                      {topic.name}
-                    </h3>
-                  </div>
+                    {/* Topic Info */}
+                    <div className="space-y-2">
+                      <h3 className="font-bold text-lg text-gray-900 group-hover:text-gray-700 transition-colors leading-tight">
+                        {topic.name}
+                      </h3>
+                    </div>
 
-                  {/* Hover Effect Line */}
-                  <div 
-                    className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500"
-                    style={{ backgroundColor: formUIColor[formName] }}
-                  />
+                    {/* Hover Effect Line */}
+                    <div 
+                      className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500"
+                      style={{ backgroundColor: formUIColor[formName] }}
+                    />
+                  </Link>
                 </div>
               ))}
             </div>
