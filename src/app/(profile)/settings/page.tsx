@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic'; // Add this line
+
 import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
