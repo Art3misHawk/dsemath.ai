@@ -5,32 +5,32 @@ const templateQuestion: Question[] = [
   {
     id: 1,
     topics: ["jf-areas-volumes"],
-    question: 'Are you gay',
-    answer: 'Yes'
+    question: '1+1=',
+    answer: '2'
   },
   {
     id: 2,
     topics: ["jf-areas-volumes"], 
-    question: 'Is kpc gay',
-    answer: 'Yes'
+    question: '2+2=',
+    answer: '4'
   },
     {
     id: 3,
     topics: ["jf-areas-volumes"], 
-    question: 'Is billy gay',
-    answer: 'Yes'
+    question: '3+3',
+    answer: '6'
   },
   {
     id: 4,
     topics: ["jf-areas-volumes"], 
-    question: 'Is Kaito gay',
-    answer: 'Yes'
+    question: '4+4',
+    answer: '8'
   },
   {
     id: 5,
     topics: ["jf-areas-volumes"], 
-    question: 'Is Tim Chun gay',
-    answer: 'No'
+    question: '5+5',
+    answer: '10'
   }
 ]
 
