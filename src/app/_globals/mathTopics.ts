@@ -1,11 +1,11 @@
-export const AvailableForms = [
+export const forms = [
   'Junior',
   'Form 4',
   'Form 5',
   'Form 6'
 ] as const;
 
-export type FormType = typeof AvailableForms[number];
+export type FormType = typeof forms[number];
 
 export interface mathTopicsType {
   id: string;
@@ -47,5 +47,12 @@ const mathTopics: mathTopicsType[] = [
   { id: 'f6-matrices', name: 'Matrices & Determinants', form: 'Form 6', questions: 18, icon: '⬜', color: '#7C3AED' },
   { id: 'f6-4-centers', name: '4 Centers', form: 'Form 6', questions: 20, icon: '⊕', color: '#7C3AED' }
 ];
+
+export const formUIColor = {
+  "Junior": '#10B981',
+  'Form 4': '#059669',
+  'Form 5': '#DC2626',
+  'Form 6': '#7C3AED',
+}
 
 export default mathTopics
