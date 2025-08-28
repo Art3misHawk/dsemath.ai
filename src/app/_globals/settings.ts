@@ -3,10 +3,10 @@ interface SettingsType {
     email: boolean;
     weeklyReports: boolean;
   };
-  /*appearance: {
-    theme: 'light' | 'dark' | 'system';
-    fontSize: 'small' | 'medium' | 'large';
-  };*/
+  appearance: {
+    theme: 'light';
+    fontSize: 'small';
+  };
   privacy: {
     shareData: boolean;
     showOnlineStatus: boolean;

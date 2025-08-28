@@ -1,4 +1,4 @@
-/*'use client';
+'use client';
 
 import React from 'react';
 import SettingsType from '@/app/_globals/settings';
@@ -73,4 +73,4 @@ function FontSizeSetting(props: {
       </select>
     </div>
   );
-}*/
+}
