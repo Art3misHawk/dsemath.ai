@@ -26,7 +26,7 @@ const mathTopics: MathTopicsType[] = [
   { id: 'jf-simultaneous-equations', name: 'Simultaneous Equations', form: 'Junior', questions: 30, icon: '🔗', color: '#10B981' },
   { id: 'jf-polygons', name: 'Polygons', form: 'Junior', questions: 25, icon: '🔷', color: '#10B981' },
   { id: 'jf-basic-triangles', name: 'Basic Triangles and its Properties', form: 'Junior', questions: 27, icon: '🔺', color: '#10B981' },
-  { id: 'f4-quadratic', name: 'Quadratic Functions', form: 'Form 4', questions: 24, icon: '📊', color: '#059669' },
+  { id: 'f4-quadratic', name: 'Quadratic Equations & Functions', form: 'Form 4', questions: 24, icon: '📊', color: '#059669' },
   { id: 'f4-geometry', name: 'Basic Geometry', form: 'Form 4', questions: 18, icon: '📐', color: '#059669' },
   { id: 'f4-rational-functions', name: 'Rational Functions', form: 'Form 4', questions: 20, icon: '🔢', color: '#059669' },
   { id: 'f4-logarithms', name: 'Logarithms Functions', form: 'Form 4', questions: 16, icon: '📈', color: '#059669' },
