@@ -15,6 +15,8 @@ export default function QuestionBankPage() {
   );
 }
 
+
+
 function Header() {
   return (
     <div className="text-center mb-16">
