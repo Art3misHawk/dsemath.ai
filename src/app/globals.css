@@ -22,8 +22,8 @@
   --color-primary-foreground: oklch(100% 0 0); /* White text on blue */
   --color-primary-glow: oklch(70% 0.15 220);
   
-  --color-secondary: oklch(55% 0.15 140); /* Green */
-  --color-secondary-foreground: oklch(100% 0 0);
+  --color-secondary: oklch(100% 0 0); /* White for sliders */
+  --color-secondary-foreground: oklch(60% 0.15 220); /* Sky blue for slider thumbs */
   
   --color-muted: oklch(96% 0.01 210); /* Light gray */
   --color-muted-foreground: oklch(45% 0.02 220); /* Medium gray */
