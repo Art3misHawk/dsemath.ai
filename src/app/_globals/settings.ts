@@ -4,8 +4,8 @@ interface SettingsType {
     weeklyReports: boolean;
   };
   appearance: {
-    theme: 'light';
-    fontSize: 'small';
+    theme: 'system';
+    fontSize: 'medium';
   };
   privacy: {
     shareData: boolean;

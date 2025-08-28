@@ -62,8 +62,8 @@ function updateSettingsOnServer(
 export default function SettingsPage() {
   const [settings, setSettings] = useState<SettingsType>({
     appearance: {
-      theme: 'light',
-      fontSize: 'small',
+      theme: 'system',
+      fontSize: 'medium',
     },
     privacy: {
       shareData: false,
