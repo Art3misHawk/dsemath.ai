@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 border-t border-background/20 pt-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* Copyright */}
-          <div className="text-background/60 text-xs">
+          <div className="text-background/60 text-xs max-w-[30vw]">
             <div>© 2025 dsemath.ai. All rights reserved.</div>
             <div>This platform is not affiliated with HKEAA. It is an independent SAAS for DSE students.</div>
           </div>
