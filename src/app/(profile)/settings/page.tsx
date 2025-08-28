@@ -79,15 +79,17 @@ export default function SettingsPage() {
 
   // Fetch settings on mount
   useEffect(function() {
-    fetchSettings(setSettings, setIsLoading);
+    if (typeof window !== 'undefined') {
+      fetchSettings(setSettings, setIsLoading);
+    }
   }, []);
 
   // Update settings on server when settings change
   useEffect(function() {
-    if (!isLoading) {
+    if (!isLoading && typeof window !== 'undefined') {
       const timeout = setTimeout(function() {
         updateSettingsOnServer(settings, setIsSaving);
-      }, 500); // Debounce to prevent too many API calls
+      }, 500);
       return function() { clearTimeout(timeout); };
     }
   }, [settings, isLoading]);
@@ -128,109 +130,6 @@ export default function SettingsPage() {
     });
   }
 
-  // Inline component sections to avoid import issues
-  const AppearanceSection = () => (
-    <div className="mb-8">
-      <h2 className="text-xl font-semibold mb-4 text-gray-700">Appearance</h2>
-      <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-600 mb-2">Theme</label>
-          <select
-            value={settings.appearance.theme}
-            onChange={(e) => handleAppearanceChange('theme', e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            disabled={isSaving}
-          >
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="system">System</option>
-          </select>
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-600 mb-2">Font Size</label>
-          <select
-            value={settings.appearance.fontSize}
-            onChange={(e) => handleAppearanceChange('fontSize', e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            disabled={isSaving}
-          >
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  );
-
-  const PrivacySection = () => (
-    <div className="mb-8">
-      <h2 className="text-xl font-semibold mb-4 text-gray-700">Privacy</h2>
-      <div className="space-y-4">
-        <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
-          <div>
-            <span className="font-medium text-gray-700">Share Data</span>
-            <p className="text-sm text-gray-500">Allow sharing of anonymized usage data</p>
-          </div>
-          <input
-            type="checkbox"
-            checked={settings.privacy.shareData}
-            onChange={(e) => handlePrivacyChange('shareData', e.target.checked)}
-            className="rounded focus:ring-2 focus:ring-blue-500"
-            disabled={isSaving}
-          />
-        </label>
-        <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
-          <div>
-            <span className="font-medium text-gray-700">Show Online Status</span>
-            <p className="text-sm text-gray-500">Let others see when you're online</p>
-          </div>
-          <input
-            type="checkbox"
-            checked={settings.privacy.showOnlineStatus}
-            onChange={(e) => handlePrivacyChange('showOnlineStatus', e.target.checked)}
-            className="rounded focus:ring-2 focus:ring-blue-500"
-            disabled={isSaving}
-          />
-        </label>
-      </div>
-    </div>
-  );
-
-  const NotificationsSection = () => (
-    <div className="mb-8">
-      <h2 className="text-xl font-semibold mb-4 text-gray-700">Notifications</h2>
-      <div className="space-y-4">
-        <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
-          <div>
-            <span className="font-medium text-gray-700">Email Notifications</span>
-            <p className="text-sm text-gray-500">Receive important updates via email</p>
-          </div>
-          <input
-            type="checkbox"
-            checked={settings.notifications.email}
-            onChange={(e) => handleNotificationChange('email', e.target.checked)}
-            className="rounded focus:ring-2 focus:ring-blue-500"
-            disabled={isSaving}
-          />
-        </label>
-        <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
-          <div>
-            <span className="font-medium text-gray-700">Weekly Reports</span>
-            <p className="text-sm text-gray-500">Get weekly progress summaries</p>
-          </div>
-          <input
-            type="checkbox"
-            checked={settings.notifications.weeklyReports}
-            onChange={(e) => handleNotificationChange('weeklyReports', e.target.checked)}
-            className="rounded focus:ring-2 focus:ring-blue-500"
-            disabled={isSaving}
-          />
-        </label>
-      </div>
-    </div>
-  );
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -247,11 +146,106 @@ export default function SettingsPage() {
         
         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2">
           <div>
-            <AppearanceSection />
-            <NotificationsSection />
+            {/* Appearance Section */}
+            <div className="mb-8">
+              <h2 className="text-xl font-semibold mb-4 text-gray-700">Appearance</h2>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-600 mb-2">Theme</label>
+                  <select
+                    value={settings.appearance.theme}
+                    onChange={(e) => handleAppearanceChange('theme', e.target.value)}
+                    className="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    disabled={isSaving}
+                  >
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="system">System</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-600 mb-2">Font Size</label>
+                  <select
+                    value={settings.appearance.fontSize}
+                    onChange={(e) => handleAppearanceChange('fontSize', e.target.value)}
+                    className="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    disabled={isSaving}
+                  >
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Notifications Section */}
+            <div className="mb-8">
+              <h2 className="text-xl font-semibold mb-4 text-gray-700">Notifications</h2>
+              <div className="space-y-4">
+                <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
+                  <div>
+                    <span className="font-medium text-gray-700">Email Notifications</span>
+                    <p className="text-sm text-gray-500">Receive important updates via email</p>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={settings.notifications.email}
+                    onChange={(e) => handleNotificationChange('email', e.target.checked)}
+                    className="rounded focus:ring-2 focus:ring-blue-500"
+                    disabled={isSaving}
+                  />
+                </label>
+                <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
+                  <div>
+                    <span className="font-medium text-gray-700">Weekly Reports</span>
+                    <p className="text-sm text-gray-500">Get weekly progress summaries</p>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={settings.notifications.weeklyReports}
+                    onChange={(e) => handleNotificationChange('weeklyReports', e.target.checked)}
+                    className="rounded focus:ring-2 focus:ring-blue-500"
+                    disabled={isSaving}
+                  />
+                </label>
+              </div>
+            </div>
           </div>
+
           <div>
-            <PrivacySection />
+            {/* Privacy Section */}
+            <div className="mb-8">
+              <h2 className="text-xl font-semibold mb-4 text-gray-700">Privacy</h2>
+              <div className="space-y-4">
+                <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
+                  <div>
+                    <span className="font-medium text-gray-700">Share Data</span>
+                    <p className="text-sm text-gray-500">Allow sharing of anonymized usage data</p>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={settings.privacy.shareData}
+                    onChange={(e) => handlePrivacyChange('shareData', e.target.checked)}
+                    className="rounded focus:ring-2 focus:ring-blue-500"
+                    disabled={isSaving}
+                  />
+                </label>
+                <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
+                  <div>
+                    <span className="font-medium text-gray-700">Show Online Status</span>
+                    <p className="text-sm text-gray-500">Let others see when you&apos;re online</p>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={settings.privacy.showOnlineStatus}
+                    onChange={(e) => handlePrivacyChange('showOnlineStatus', e.target.checked)}
+                    className="rounded focus:ring-2 focus:ring-blue-500"
+                    disabled={isSaving}
+                  />
+                </label>
+              </div>
+            </div>
           </div>
         </div>
         
