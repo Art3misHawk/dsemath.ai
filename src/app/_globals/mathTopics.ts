@@ -7,7 +7,7 @@ export const forms = [
 
 export type FormType = typeof forms[number];
 
-export interface mathTopicsType {
+export interface MathTopicsType {
   id: string;
   name: string;
   form: FormType;
@@ -16,7 +16,7 @@ export interface mathTopicsType {
   color: string;
 }
 
-const mathTopics: mathTopicsType[] = [
+const mathTopics: MathTopicsType[] = [
   { id: 'jf-areas-volumes', name: 'Areas and Volumes', form: 'Junior', questions: 32, icon: '📐', color: '#10B981' },
   { id: 'jf-percentages', name: 'Percentages', form: 'Junior', questions: 28, icon: '%', color: '#10B981' },
   { id: 'jf-rate-ratio', name: 'Rate & Ratio', form: 'Junior', questions: 24, icon: '⚖️', color: '#10B981' },
@@ -48,11 +48,15 @@ const mathTopics: mathTopicsType[] = [
   { id: 'f6-4-centers', name: '4 Centers', form: 'Form 6', questions: 20, icon: '⊕', color: '#7C3AED' }
 ];
 
-export const formUIColor = {
-  "Junior": '#10B981',
+export interface FormUIColorTypes {
+  [key: string]: string; // Index signature for string keys and string values
+}
+
+export const formUIColor: FormUIColorTypes = {
+  'Junior': '#10B981',
   'Form 4': '#059669',
   'Form 5': '#DC2626',
   'Form 6': '#7C3AED',
-}
+};
 
 export default mathTopics

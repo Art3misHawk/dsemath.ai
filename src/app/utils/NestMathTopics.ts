@@ -1,7 +1,7 @@
-import mathTopics, { mathTopicsType, forms } from '@/app/_globals/mathTopics';
+import mathTopics, { MathTopicsType, forms } from '@/app/_globals/mathTopics';
 
 export interface NestedMathTopics {
-  [key: string]: mathTopicsType[];
+  [key: string]: MathTopicsType[];
 }
 
 let cachedestMathTopicsByForm: NestedMathTopics | null = null;

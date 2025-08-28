@@ -1,6 +1,8 @@
 import Link from "next/link";
-import mathTopicsByForm from "@/app/_globals/mathTopicsByForm_decrepited";
+// import mathTopicsByForm from "@/app/_globals/mathTopicsByForm_decrepited";
 import Head from "next/head";
+import { nestMathTopicsByForm } from "@/app/utils/NestMathTopics";
+import { formUIColor } from '@/app/_globals/mathTopics'
 
 export default function QuestionBankPage() {
   return (
@@ -30,13 +32,13 @@ function QuestionTopicBank() {
     <>
       {/* Topics by Form - 4 Column Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        {Object.entries(mathTopicsByForm).map(([formName, formData]) => (
+        {Object.entries(nestMathTopicsByForm()).map(([formName, topics]) => (
           <div key={formName} className="relative">
             {/* Form Header */}
             <div className="text-center mb-8">
               <div 
                 className="h-1 w-full rounded-full mx-auto mb-4"
-                style={{ backgroundColor: formData.color }}
+                style={{ backgroundColor: formUIColor[formName] }}
               />
               <h2 className="text-2xl font-bold text-gray-800">
                 {formName}
@@ -45,7 +47,7 @@ function QuestionTopicBank() {
 
         {/* Topics Grid - Browse Only */}
             <div className="space-y-6">
-              {formData.topics.map((topic) => (
+              {topics.map((topic) => (
                 <div
                   key={topic.id}
                   className="group relative bg-white rounded-3xl p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border border-gray-100 overflow-hidden"
@@ -53,7 +55,7 @@ function QuestionTopicBank() {
                   {/* Gradient Background Effect */}
                   <div 
                     className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500"
-                    style={{ backgroundColor: formData.color }}
+                    style={{ backgroundColor: formUIColor[formName] }}
                   />
                   
                   {/* Topic Icon & Count */}
@@ -61,13 +63,13 @@ function QuestionTopicBank() {
                     <div className="relative">
                       <div 
                         className="w-12 h-12 rounded-xl flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition-all duration-300"
-                        style={{ backgroundColor: `${formData.color}15`, border: `2px solid ${formData.color}30` }}
+                        style={{ backgroundColor: `${formUIColor[formName]}15`, border: `2px solid ${formUIColor[formName]}30` }}
                       >
                         {topic.icon}
                       </div>
                       <div 
                         className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md"
-                        style={{ backgroundColor: formData.color }}
+                        style={{ backgroundColor: formUIColor[formName] }}
                       >
                         {topic.questions}
                       </div>
@@ -75,7 +77,7 @@ function QuestionTopicBank() {
                     
                     <div className="text-right">
                       <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Available</div>
-                      <div className="text-lg font-bold" style={{ color: formData.color }}>
+                      <div className="text-lg font-bold" style={{ color: formUIColor[formName] }}>
                         {topic.questions}
                       </div>
                       <div className="text-xs text-gray-400">questions</div>
@@ -92,7 +94,7 @@ function QuestionTopicBank() {
                   {/* Hover Effect Line */}
                   <div 
                     className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500"
-                    style={{ backgroundColor: formData.color }}
+                    style={{ backgroundColor: formUIColor[formName] }}
                   />
                 </div>
               ))}
