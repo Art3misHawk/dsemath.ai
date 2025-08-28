@@ -183,7 +183,7 @@ export default function SettingsPage() {
         <label className="flex items-center justify-between p-3 border border-gray-200 rounded-md">
           <div>
             <span className="font-medium text-gray-700">Show Online Status</span>
-            <p className="text-sm text-gray-500">Let others see when you're online</p>
+            <p className="text-sm text-gray-500">Let others see when you&apos;re online</p>
           </div>
           <input
             type="checkbox"
