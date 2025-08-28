@@ -61,10 +61,10 @@ function updateSettingsOnServer(
 
 export default function SettingsPage() {
   const [settings, setSettings] = useState<SettingsType>({
-    appearance: {
+    /*appearance: {
       theme: 'system',
       fontSize: 'medium',
-    },
+    },*/
     privacy: {
       shareData: false,
       showOnlineStatus: true,
@@ -92,7 +92,7 @@ export default function SettingsPage() {
     }
   }, [settings, isLoading]);
 
-  function handleAppearanceChange(key: keyof SettingsType['appearance'], value: string): void {
+  /*function handleAppearanceChange(key: keyof SettingsType['appearance'], value: string): void {
     setSettings(function(prev: SettingsType) {
       return {
         ...prev,
@@ -102,7 +102,7 @@ export default function SettingsPage() {
         },
       };
     });
-  }
+  }*/
 
   function handlePrivacyChange(key: keyof SettingsType['privacy'], value: boolean): void {
     setSettings(function(prev: SettingsType) {
@@ -129,7 +129,7 @@ export default function SettingsPage() {
   }
 
   // Inline component sections to avoid import issues
-  const AppearanceSection = () => (
+  /*const AppearanceSection = () => (
     <div className="mb-8">
       <h2 className="text-xl font-semibold mb-4 text-gray-700">Appearance</h2>
       <div className="space-y-4">
@@ -161,7 +161,7 @@ export default function SettingsPage() {
         </div>
       </div>
     </div>
-  );
+  );*/
 
   const PrivacySection = () => (
     <div className="mb-8">
@@ -247,7 +247,7 @@ export default function SettingsPage() {
         
         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2">
           <div>
-            <AppearanceSection />
+            {/*<AppearanceSection />*/}
             <NotificationsSection />
           </div>
           <div>
