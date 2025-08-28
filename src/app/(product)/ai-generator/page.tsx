@@ -9,6 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
+import mathTopics from '@/app/_globals/mathTopics';
+
 import { 
   TbBrain, 
   TbFileText, 
@@ -76,20 +78,6 @@ const AIGeneratorPage = () => {
 
   const [questionLoading, setQuestionLoading] = useState(false);
   const [paperLoading, setPaperLoading] = useState(false);
-
-  // Math topics for DSE
-  const mathTopics = [
-    'Algebra and Polynomials',
-    'Exponential and Logarithmic Functions',
-    'Trigonometry',
-    'Geometry and Mensuration',
-    'Coordinate Geometry',
-    'Statistics and Probability',
-    'Calculus and Applications',
-    'Mathematical Induction',
-    'Sequences and Series',
-    'Binomial Theorem'
-  ];
 
   const questionTypes = {
     paper2: ['Multiple Choice Questions (MCQ)'],
@@ -183,8 +171,8 @@ const AIGeneratorPage = () => {
                   </SelectTrigger>
                   <SelectContent className="bg-white">
                     {mathTopics.map((topic) => (
-                      <SelectItem key={topic} value={topic} className="hover:bg-gray-100">
-                        {topic}
+                      <SelectItem key={topic.id} value={topic.id} className="hover:bg-gray-100">
+                        {topic.name}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -344,8 +332,8 @@ const AIGeneratorPage = () => {
                   </SelectTrigger>
                   <SelectContent className="bg-white">
                     {mathTopics.map((topic) => (
-                      <SelectItem key={topic} value={topic} className="hover:bg-gray-100">
-                        {topic}
+                      <SelectItem key={topic.id} value={topic.id} className="hover:bg-gray-100">
+                        {topic.name}
                       </SelectItem>
                     ))}
                   </SelectContent>
