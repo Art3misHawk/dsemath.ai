@@ -1,14 +1,11 @@
 'use client';
 
-export const dynamic = 'force-dynamic'; // Add this line
+export const dynamic = 'force-dynamic';
 
 import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SettingsType from '@/app/_globals/settings';
-import AppearanceSection from './_components/Apparance';
-import PrivacySection from './_components/Privacy';
-import NotificationsSection from './_components/Notification';
 
 // Helper function to fetch settings from server
 function fetchSettings(
@@ -144,6 +141,13 @@ export default function SettingsPage() {
       <ToastContainer />
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-8">
         <h1 className="text-3xl font-bold mb-8 text-gray-800">Settings</h1>
+        
+        {/* Temporarily replace with simple divs */}
+        <div>Appearance Section (temporarily disabled)</div>
+        <div>Privacy Section (temporarily disabled)</div>
+        <div>Notifications Section (temporarily disabled)</div>
+        
+        {/* Comment these out temporarily
         <AppearanceSection
           appearance={settings.appearance}
           handleAppearanceChange={handleAppearanceChange}
@@ -159,6 +163,8 @@ export default function SettingsPage() {
           handleNotificationChange={handleNotificationChange}
           isSaving={isSaving}
         />
+        */}
+        
         {isSaving && (
           <div className="text-sm text-gray-500">Saving settings...</div>
         )}
