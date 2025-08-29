@@ -147,11 +147,13 @@ function Footer() {
         </p>
         <div className="flex items-center justify-center space-x-8">
           <div className="flex items-center space-x-2">
+            <span className="text-green-500 font-bold text-xl">✓</span>
             <Check className="w-4 h-4 text-secondary" />
             <span>Cancel anytime</span>
           </div>
           <div className="flex items-center space-x-2">
             <Check className="w-4 h-4 text-secondary" />
+            <span className="text-green-500 font-bold text-xl">✓</span>
             <span>Money-back guarantee</span>
           </div>
         </div>
