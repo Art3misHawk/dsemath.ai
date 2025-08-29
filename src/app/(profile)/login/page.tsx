@@ -14,8 +14,8 @@ const HomePage = () => {
           onClick={() => {
             account.createOAuth2Session(
               'google' as any,
-              "http://localhost:3000/login-test", // Success URL
-              "http://localhost:3000" // Failure URL
+              "https://dsemathai.com/dashboard", // Success URL
+              "https://dsemathai.com/login" // Failure URL
             );
           }}
         >
