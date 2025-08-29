@@ -11,4 +11,8 @@ client
   .setProject(config.APPWRITE_PROJECT);
 
 export const account = new Account(client);
-export const database = new Databases(client);
+export const databases = new Databases(client);
+
+// Your database and collection IDs
+export const DATABASE_ID = '68b1910e002b676ccc00';
+export const QUESTIONS_COLLECTION_ID = 'questions';
