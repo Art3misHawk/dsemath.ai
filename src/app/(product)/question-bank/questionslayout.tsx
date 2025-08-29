@@ -1,4 +1,4 @@
-'use client';
+/* 'use client';
 
 import { useState, useEffect } from 'react';
 import { questions } from '../../../lib/server/appwrite';
@@ -62,4 +62,4 @@ export default function QuestionsList(): JSX.Element {
       )}
     </div>
   );
-}
+} */
