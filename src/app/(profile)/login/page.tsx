@@ -13,7 +13,7 @@ const HomePage = () => {
           className="flex justify-center items-center gap-2 border-2 border-slate-600 px-5 py-2 rounded-sm"
           onClick={() => {
             account.createOAuth2Session(
-              "google",
+              'google' as any,
               "http://localhost:3000/login-test", // Success URL
               "http://localhost:3000" // Failure URL
             );
