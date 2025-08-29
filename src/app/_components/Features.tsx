@@ -9,7 +9,7 @@ import {
 } from "react-icons/ri";
 import { TbTargetArrow } from "react-icons/tb";
 import { Card, CardContent } from "@/components/ui/card";
-import { featureType } from "./Interface";
+import { featureType } from "./Interface-decrepit";
 
 const features: featureType[] = [
   {

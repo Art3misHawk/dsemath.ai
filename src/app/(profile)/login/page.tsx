@@ -2,7 +2,7 @@
 
 import { FcGoogle } from "react-icons/fc";
 
-import { account } from "@/lib/server/appwrite";
+import { account } from "@/app/server/appwrite";
 
 const HomePage = () => {
   return (

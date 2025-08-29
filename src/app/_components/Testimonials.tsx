@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import { TestimonialType } from "./Interface";
+import { TestimonialType } from "./Interface-decrepit";
 
 const testimonials: TestimonialType[] = [
   {

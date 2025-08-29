@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
 import { Zap, BookOpen, FileText, Search } from "lucide-react";
-import { PricingPlanType } from "./Interface";
+import { PricingPlanType } from "./Interface-decrepit";
 
 interface HeroSectionNavigateButtonProps {
   children: ReactNode; // Allow any valid React node as children

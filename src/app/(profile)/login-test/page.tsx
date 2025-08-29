@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { account } from "@/lib/server/appwrite";
+import { account } from "@/app/server/appwrite";
 
 type User = {
   name: string;

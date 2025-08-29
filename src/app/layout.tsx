@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
-import "./globals.css";
+import "@/styles/app.css";
+import "./global.css"
+
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import TopBar from "./Topbar";

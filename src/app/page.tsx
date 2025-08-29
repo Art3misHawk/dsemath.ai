@@ -1,20 +1,23 @@
-import HeroSection from "./_homepage-components/Herosection";
-import Features from "./_homepage-components/Features";
-import Pricing from "./_homepage-components/Pricing";
+import HeroSection from "./_components/Herosection-decrepit";
+import Features from "./_components/Features";
+// import Pricing from "./_components/Pricing-decrepit";
 /*import Testimonials from "./_homepage-components/Testimonials"; */
-import FAQ from "./_homepage-components/FAQ";
-import Footer from "./_homepage-components/Footer";
+// import FAQ from "./_components/FAQ-decrepit";
+import Footer from "./_components/Footer";
 
+import Hero from './_components/Hero'
+import Pricing from './_components/Pricing'
+import FAQ from './_components/FAQ'
 
 export default function HomePage() {
-    return (
-      <div>
-        <HeroSection />
-        <Features />
-        <Pricing />
-        {/* <Testimonials /> */}
-        <FAQ />
-        <Footer />
-      </div>
-    );
+  return (
+    <div>
+      <Hero />
+      <Features />
+      <Pricing />
+      {/* <Testimonials /> */}
+      <FAQ />
+      <Footer />
+    </div>
+  );
 }

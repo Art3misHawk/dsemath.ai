@@ -1,6 +1,6 @@
 import { Check, Star, Zap } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PricingPlanType } from "./Interface";
+import { PricingPlanType } from "./Interface-decrepit";
 import { PayButton } from "./client-components";
 
 const pricingPlans: PricingPlanType[] = [

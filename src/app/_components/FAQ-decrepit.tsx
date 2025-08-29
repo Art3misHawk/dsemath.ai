@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { FAQType } from "./Interface";
+import { FAQType } from "./Interface-decrepit";
 
 const faqs: FAQType[] = [
   {
