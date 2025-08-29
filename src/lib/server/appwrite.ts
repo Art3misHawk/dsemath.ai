@@ -1,8 +1,8 @@
 import { Client, Databases, Account } from "appwrite";
 
 export const config = {
-  APPWRITE_ENDPOINT: ({}).NEXT_PUBLIC_APPWRITE_ENDPOINT,
-  APPWRITE_PROJECT: ({}).NEXT_PUBLIC_APPWRITE_PROJECT,
+  APPWRITE_ENDPOINT: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "",
+  APPWRITE_PROJECT: process.env.NEXT_PUBLIC_APPWRITE_PROJECT || "",
 };
 
 const client = new Client();

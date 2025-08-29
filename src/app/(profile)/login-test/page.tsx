@@ -3,8 +3,14 @@
 import React, { useEffect, useState } from "react";
 import { account } from "@/lib/server/appwrite";
 
+type User = {
+  name: string;
+  email: string;
+  // add other properties if needed
+};
+
 const Dashboard = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<User | null>(null);
   const getAccount = async () => {
     const accountData = await account.get();
     setUser(accountData);
