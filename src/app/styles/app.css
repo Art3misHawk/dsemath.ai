@@ -3,15 +3,17 @@
 @import "tailwindcss";
 @import "./daisyui.css";
 
-@plugin "@iconify/tailwind4" {
-    prefixes: lucide;
-}
+
 
 @theme {
     --font-body: "DM Sans", sans-serif;
 }
 
-/** Container utility **/
+/*
+ @plugin "@iconify/tailwind4" {
+    prefixes: lucide;
+}
+
 @utility container {
     margin-inline: auto;
     padding-inline: 1rem;
@@ -28,4 +30,54 @@ body {
 
 :target {
     @apply scroll-m-12 lg:scroll-mt-0;
+}  */
+/* Convert @utility to @layer utilities in v4 */
+@layer utilities {
+  .container {
+    margin-inline: auto;
+    padding-inline: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Responsive padding for container */
+  @media (min-width: 640px) {
+    .container { padding-left: 1rem; padding-right: 1rem; }
+  }
+  @media (min-width: 768px) {
+    .container { padding-left: 2rem; padding-right: 2rem; }
+  }
+  @media (min-width: 1024px) {
+    .container { padding-left: 3rem; padding-right: 3rem; }
+  }
+  @media (min-width: 1280px) {
+    .container { padding-left: 4rem; padding-right: 4rem; }
+  }
+  @media (min-width: 1536px) {
+    .container { padding-left: 6rem; padding-right: 6rem; }
+}
+}```
+@layer base {
+  /* Convert @apply to direct CSS */
+  html {
+    position: relative;
+    scroll-behavior: smooth;
+  }
+
+body {
+  background-color: oklch(var(--b1));
+  font-family: var(--font-body);
+  color: oklch(var(--bc));
+  overflow-x: hidden;
+}
+
+:target {
+  scroll-margin: 3rem;
+}
+
+@media (min-width: 1024px) {
+  :target {
+    scroll-margin-top: 0;
+  }
+}
 }

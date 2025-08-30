@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
-import "@/styles/app.css";
 // import "./global.css"
 import "./styles/app.css";
 
