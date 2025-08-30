@@ -18,13 +18,6 @@ export default function Topbar() {
 
 	return (
 		<>
-			<div className="bg-base-200 border-base-300 border-b px-1 py-1.5 text-center text-[11px] sm:text-sm">
-				<span>
-					<span className="text-error font-medium">Update:</span>
-					TailwindCSS 4 & DaisyUI 5 revamp your control!
-				</span>
-			</div>
-
 			<div
 				id="layout-topbar"
 				data-at-top={atTop}
@@ -41,7 +34,7 @@ export default function Topbar() {
 							</label>
 
 							<a href="#" className="text-xl font-semibold">
-								SaaS Landing
+								dsemath.ai
 							</a>
 						</div>
 
