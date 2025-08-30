@@ -1,23 +1,27 @@
-import HeroSection from "./_components/Herosection-decrepit";
-import Features from "./_components/Features";
-// import Pricing from "./_components/Pricing-decrepit";
-/*import Testimonials from "./_homepage-components/Testimonials"; */
-// import FAQ from "./_components/FAQ-decrepit";
-import Footer from "./_components/Footer";
+'use client'
 
-import Hero from './_components/Hero'
-import Pricing from './_components/Pricing'
-import FAQ from './_components/FAQ'
+import { Hero } from "./components/Hero";
+import { Feature } from "./components/Feature";
+import { Integration } from "./components/Integration";
+import { Pricing } from "./components/Pricing";
+import { Topbar } from "./components/Topbar";
+import { FAQ } from "./components/FAQ";
+import { Footer } from "./components/Footer";
+import { ThemeToggle } from "./components/ThemeToggle";
 
-export default function LandingPage() {
-  return (
-    <div>
-      <Hero />
-      <Features />
-      <Pricing />
-      {/* <Testimonials /> */}
-      <FAQ />
-      <Footer />
-    </div>
-  );
+function App() {
+    return (
+        <>
+            <Topbar />
+            <Hero />
+            <Feature />
+            <Integration />
+            <Pricing />
+            <FAQ />
+            <Footer />
+            <ThemeToggle />
+        </>
+    );
 }
+
+export default App;
