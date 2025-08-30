@@ -1,133 +1,215 @@
-"use client";
+'use client';
 
-import { Menu, X } from 'lucide-react';
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
-const navItems = [
-  { name: "AI Generator", href: "/ai-generator" },
-  { name: "Question Bank", href: "/question-bank" },
-  { name: "Community", href: "/community" },
-  { name: "Dashboard", href: "/dashboard" },
-  { name: "Settings", href: "/settings" },
-];
+export default function Topbar() {
+	const [atTop, setAtTop] = useState(true);
+	const loginModal = useRef<HTMLDialogElement | null>(null);
+	const registerModal = useRef<HTMLDialogElement | null>(null);
 
-export default function TopBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+	useEffect(() => {
+		const onWindowScroll = () => {
+			setAtTop(window.scrollY < 30);
+		};
+		window.addEventListener("scroll", onWindowScroll);
+		onWindowScroll();
+		return () => window.removeEventListener("scroll", onWindowScroll);
+	}, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+	return (
+		<>
+			<div className="bg-base-200 border-base-300 border-b px-1 py-1.5 text-center text-[11px] sm:text-sm">
+				<span>
+					<span className="text-error font-medium">Update:</span>
+					TailwindCSS 4 & DaisyUI 5 revamp your control!
+				</span>
+			</div>
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+			<div
+				id="layout-topbar"
+				data-at-top={atTop}
+				className="bg-base-100 lg:bg-base-100/90 border-base-300 sticky top-0 z-10 border-b data-[at-top=true]:border-transparent lg:backdrop-blur-sm">
+				<div className="container">
+					<nav className="flex items-center justify-between py-2">
+						<div className="flex items-center gap-2">
+							<label
+								htmlFor="menu-drawer"
+								id="menu-drawer-trigger"
+								aria-label="open sidebar"
+								className="btn btn-square btn-ghost btn-sm lg:hidden">
+								<span className="iconify lucide--menu size-5"></span>
+							</label>
 
-  return (
-    <header 
-      className={`sticky top-0 left-0 right-0 z-50 transition-[height,background-color,backdrop-filter,box-shadow] duration-300 ease-in-out
-        ${ isScrolled ? 'h-12 bg-white backdrop-blur-none border-b border-gray-200 shadow-lg' : 'h-[68px] bg-white backdrop-blur-none border-b border-gray-100 shadow-md'
-      }`}
-    >
-      <div className="flex items-center justify-between px-0 w-full h-full">
-        <Logo />
-        <NavBar />
-        <LoginButton />
+							<a href="#" className="text-xl font-semibold">
+								SaaS Landing
+							</a>
+						</div>
 
-        {/* Mobile Menu Button - Absolutely rightmost */}
-        <button
-          className="md:hidden rounded-full hover:bg-accent/50 transition-all duration-500 flex-shrink-0 mr-4 p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? ( <X className="w-6 h-6" />) : (<Menu className="w-6 h-6" />)}
-        </button>
-      </div>
-      {isMenuOpen && <MobileNavBar />}
-    </header>
-  );
-}
+						<div className="max-lg:hidden">
+							<ul className="menu menu-horizontal gap-2 px-1">
+								<li className="font-medium">
+									<a href="#home">Home</a>
+								</li>
+								<li className="font-medium">
+									<a href="#features">Features</a>
+								</li>
+								<li className="font-medium">
+									<a href="#integrations">Integrations</a>
+								</li>
+								<li className="font-medium">
+									<a href="#pricing">Pricing</a>
+								</li>
+								<li className="font-medium">
+									<a href="#faq">FAQ</a>
+								</li>
+							</ul>
+						</div>
 
-function Logo() {
-  return (
-    <Link className="pl-4 transition-transform duration-300 hover:scale-105" href="/">
-      <svg 
-        width="140" height="32" viewBox="0 0 140 32" fill="none" 
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-8"
-      >
-        <text
-          x="0" y="24"
-          className="fill-sky-600 font-semibold"
-          style={{
-            fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
-            fontSize: "20px",
-            fontWeight: "600",
-            letterSpacing: "-0.01em"
-          }}
-        >
-          dsemath.ai
-        </text>
-      </svg>
-    </Link>
-  )
-}
+						<div className="space-x-2">
+							<a className="btn btn-ghost btn-sm" onClick={() => registerModal.current?.showModal()}>
+								Register
+							</a>
+							<a className="btn btn-primary btn-sm" onClick={() => loginModal.current?.showModal()}>
+								Login
+							</a>
+						</div>
+					</nav>
 
-function NavBar() {
-  return (
-    <nav className="md:flex items-center justify-center w-full space-x-1 lg:space-x-2 xl:space-x-3">
-      {navItems.map((item) => (
-        <Link
-          key={item.name}
-          href={item.href}
-          className="space-x-1 lg:space-x-2 text-sky-600 hover:text-sky-700 transition-all duration-300 px-2 py-2 text-xs lg:px-3 lg:py-2.5 lg:text-sm xl:px-4 xl:py-3 xl:text-base bg-transparent rounded-none shadow-none hover:bg-sky-100 hover:shadow-lg hover:shadow-sky-200/60 hover:scale-105 hover:rounded-full font-sans font-medium tracking-normal"
-        >
-          <span className="hidden md:block text-xs lg:text-sm xl:text-base">
-            {item.name}
-          </span>
-        </Link>
-      ))}
-    </nav>
-  )
-}
+					<div className="drawer">
+						<input id="menu-drawer" type="checkbox" className="drawer-toggle" />
+						<div className="drawer-side">
+							<label htmlFor="menu-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+							<div className="bg-base-100 min-h-full w-60 p-5">
+								<a href="#" className="text-xl font-semibold">
+									SaaS Landing
+								</a>
+								<ul className="menu w-full gap-2 p-0 pt-4">
+									<li className="font-medium">
+										<a href="#home">Home</a>
+									</li>
+									<li className="font-medium">
+										<a href="#features">Features</a>
+									</li>
+									<li className="font-medium">
+										<a href="#integrations">Integrations</a>
+									</li>
+									<li className="font-medium">
+										<a href="#pricing">Pricing</a>
+									</li>
+									<li className="font-medium">
+										<a href="#faq">FAQ</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-function LoginButton() {
-  return (
-    <div className="hidden md:flex items-center pl-4 pr-6">
-      <Link
-        href='/login'
-        className="bg-sky-600 text-white font-semibold rounded-xl shadow-lg px-6 py-2 transition-all duration-300 hover:bg-sky-700 hover:scale-[1.04] focus:outline-none focus:ring-2 focus:ring-sky-300 font-sans"
-      >
-        Login
-      </Link>
-    </div>
-  )
-}
+			<dialog id="login_modal" className="modal" ref={loginModal}>
+				<div className="modal-box relative max-w-xs md:max-w-sm">
+					<form method="dialog" className="absolute end-2 top-2">
+						<button className="btn btn-sm btn-circle btn-ghost">
+							<span className="iconify lucide--x size-4"></span>
+						</button>
+					</form>
+					<div className="text-center text-xl font-medium">Login</div>
 
-function MobileNavBar() {
-  return (
-    <nav className="md:hidden pb-4 border-t border-gray-200 pt-4 flex flex-col items-center bg-blue-50 shadow-md">
-        {navItems.map((item) => 
-          <Link
-            key={item.name}
-            href={item.href}
-            onClick={(e) => {
+					<fieldset className="fieldset mt-5">
+						<legend className="fieldset-legend">Email Address</legend>
+						<label className="input w-full focus:outline-0">
+							<span className="iconify lucide--mail text-base-content/80 size-5"></span>
+							<input className="grow focus:outline-0" placeholder="Email Address" type="email" />
+						</label>
+					</fieldset>
+					<fieldset className="fieldset">
+						<legend className="fieldset-legend">Password</legend>
+						<label className="input w-full focus:outline-0">
+							<span className="iconify lucide--key-round text-base-content/80 size-5"></span>
+							<input className="grow focus:outline-0" placeholder="Password" type="password" />
+						</label>
+					</fieldset>
+					<div className="mt-5 flex items-center justify-end gap-3">
+						<button className="btn">Register</button>
+						<button className="btn btn-primary">Login</button>
+					</div>
+					<div className="mt-5 flex items-center gap-3">
+						<hr className="border-base-300 grow" />
+						<span className="text-base-content/70 text-sm">Continue with</span>
+						<hr className="border-base-300 grow" />
+					</div>
 
-            }}
-            className="flex items-center space-x-3 text-sky-600 active:text-sky-700 transition-all duration-300 p-3 bg-transparent rounded-none shadow-none cursor-pointer active:bg-sky-100 hover:shadow-lg active:shadow-sky-200/60 active:scale-105 focus:rounded-full font-sans font-medium tracking-normal"
-          >
-            <span>{item.name}</span>
-          </Link>
-        )}
+					<div className="mt-5 flex gap-4">
+						<button className="btn grow">
+							<span className="iconify lucide--fingerprint size-4"></span>
+							Fingerprint
+						</button>
+						<button className="btn grow">
+							<span className="iconify lucide--github size-4"></span>
+							Github
+						</button>
+					</div>
+				</div>
+				<form method="dialog" className="modal-backdrop">
+					<button>close</button>
+				</form>
+			</dialog>
 
-      {/* Login button rightmost (bottom) */}
-      <Link
-        href={'/login'}
-        className="mt-4 bg-sky-600 text-white font-semibold rounded-xl shadow-lg px-6 py-2 transition-all duration-300 hover:bg-sky-700 hover:scale-[1.04] focus:outline-none focus:ring-2 focus:ring-sky-300 font-sans"
-      >
-        Login
-      </Link>
-    </nav>
-  )
-}
+			<dialog id="register_modal" className="modal" ref={registerModal}>
+				<div className="modal-box relative max-w-xs md:max-w-sm">
+					<form method="dialog" className="absolute end-2 top-2">
+						<button className="btn btn-sm btn-circle btn-ghost">
+							<span className="iconify lucide--x size-4"></span>
+						</button>
+					</form>
+					<div className="text-center text-xl font-medium">Create an Account</div>
+
+					<fieldset className="fieldset mt-5">
+						<legend className="fieldset-legend">Username</legend>
+						<label className="input w-full focus:outline-0">
+							<span className="iconify lucide--user text-base-content/80 size-5"></span>
+							<input className="grow focus:outline-0" placeholder="Username" type="text" />
+						</label>
+					</fieldset>
+					<fieldset className="fieldset">
+						<legend className="fieldset-legend">Email Address</legend>
+						<label className="input w-full focus:outline-0">
+							<span className="iconify lucide--mail text-base-content/80 size-5"></span>
+							<input className="grow focus:outline-0" placeholder="Email Address" type="email" />
+						</label>
+					</fieldset>
+					<fieldset className="fieldset">
+						<legend className="fieldset-legend">Password</legend>
+						<label className="input w-full focus:outline-0">
+							<span className="iconify lucide--key-round text-base-content/80 size-5"></span>
+							<input className="grow focus:outline-0" placeholder="Password" type="password" />
+						</label>
+					</fieldset>
+					<div className="mt-5 flex items-center justify-end gap-3">
+						<button className="btn">Register</button>
+						<button className="btn btn-primary">Login</button>
+					</div>
+					<div className="mt-5 flex items-center gap-3">
+						<hr className="border-base-300 grow" />
+						<span className="text-base-content/70 text-sm">Continue with</span>
+						<hr className="border-base-300 grow" />
+					</div>
+
+					<div className="mt-5 flex gap-4">
+						<button className="btn grow">
+							<span className="iconify lucide--fingerprint size-4"></span>
+							Fingerprint
+						</button>
+						<button className="btn grow">
+							<span className="iconify lucide--github size-4"></span>
+							Github
+						</button>
+					</div>
+				</div>
+				<form method="dialog" className="modal-backdrop">
+					<button>close</button>
+				</form>
+			</dialog>
+		</>
+	);
+};

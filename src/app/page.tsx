@@ -9,7 +9,7 @@ import Hero from './_components/Hero'
 import Pricing from './_components/Pricing'
 import FAQ from './_components/FAQ'
 
-export default function HomePage() {
+export default function LandingPage() {
   return (
     <div>
       <Hero />

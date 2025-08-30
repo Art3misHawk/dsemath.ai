@@ -108,7 +108,7 @@ export default function Pricing() {
 					</div>
 					<div className="mt-8 grid gap-8 lg:grid-cols-3">
             {pricingPlansWithUI.map((plan) => 
-              <div className="card border-base-300 border p-3">
+              <div key={plan.name} className="card border-base-300 border p-3">
                 <div className={`${plan.backgroundColor} rounded-box p-6`}>
                   {
                     plan.isMostPopular ?
@@ -128,8 +128,8 @@ export default function Pricing() {
                 </div>
                 <div className="p-6">
                   <ul className="list-inside list-disc space-y-3" role="list">
-                    {plan.features.map((feature) =>
-                      <li>
+                    {plan.features.map((feature, index) =>
+                      <li key={index}>
                         <span className="ms-3">{feature}</span>
                       </li>
                     )}

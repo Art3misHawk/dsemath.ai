@@ -5,7 +5,8 @@ import "./global.css"
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-import TopBar from "./Topbar";
+import TopBar from "./Topbar-decrepit";
+import Topbar from "./Topbar";
 import Footer from "./Footer";
 import 'katex/dist/katex.min.css';
 
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body className={inter.className}>
-        <TopBar />
+        <Topbar />
         {children}
         <SpeedInsights />
         <Footer />
